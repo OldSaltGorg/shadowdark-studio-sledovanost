@@ -1,5 +1,5 @@
 {{#if (eq activeTab "tree")}}
-<section class="sds-tab sds-tab-tree {{#if editMode}}editing{{/if}}" data-tab="tree">
+<section class="sds-tab sds-tab-tree {{#if editMode}}editing{{/if}}" data-sds-tab="tree">
   <div class="sds-treebar">
     <span class="hint"><i class="fa-solid fa-check"></i> {{ownedCount}}/{{totalCount}} {{L.Header.Owned}}</span>
     {{#if isGM}}
@@ -208,5 +208,5 @@
   </div>
 </section>
 {{else}}
-<section class="sds-tab" data-tab="tree" hidden></section>
+<section class="sds-tab" data-sds-tab="tree" hidden></section>
 {{/if}}

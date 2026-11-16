@@ -19,7 +19,21 @@ function toggleStudio() {
   return openStudio();
 }
 
+/**
+ * Foundry serves module CSS with a 4-hour browser cache, so a manifest `styles` entry can
+ * pair new code with stale styles after an update. Load it with the version in the URL.
+ */
+function loadStyles() {
+  const version = game.modules.get(MODULE_ID)?.version ?? "dev";
+  const link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = foundry.utils.getRoute(`modules/${MODULE_ID}/styles/studio.css?v=${encodeURIComponent(version)}`);
+  link.dataset.module = MODULE_ID;
+  document.head.append(link);
+}
+
 Hooks.once("init", () => {
+  loadStyles();
   registerSettings();
   game.modules.get(MODULE_ID).api = { open: openStudio, toggle: toggleStudio, getTree, getStudio, getRivals, progression };
 });

@@ -25,7 +25,7 @@ export class StudioApp extends HandlebarsApplicationMixin(ApplicationV2) {
     window: { icon: "fa-solid fa-feather-pointed", resizable: true },
     position: { width: 1360, height: 860 },
     actions: {
-      tab: StudioApp.#onTab,
+      sdsTab: StudioApp.#onTab,
       ...treeActions,
       ...rewardsActions,
       ...boardActions
@@ -112,7 +112,7 @@ export class StudioApp extends HandlebarsApplicationMixin(ApplicationV2) {
   }
 
   static #onTab(event, target) {
-    this.activeTab = target.dataset.tab;
+    this.activeTab = target.dataset.sdsTab;
     this.render();
   }
 }
