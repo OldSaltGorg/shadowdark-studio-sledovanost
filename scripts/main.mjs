@@ -34,6 +34,7 @@ function loadStyles() {
 
 Hooks.once("init", () => {
   loadStyles();
+  loadDictionaries();
   registerSettings();
   game.modules.get(MODULE_ID).api = { open: openStudio, toggle: toggleStudio, getTree, getStudio, getRivals, progression };
 });

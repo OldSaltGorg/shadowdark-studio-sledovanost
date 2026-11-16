@@ -607,3 +607,23 @@
 .sdstudio .sds-lb-row.selected { box-shadow: inset 3px 0 0 var(--sds-gold); }
 .sdstudio .sds-lb-selinfo { font-size: 0.8rem; color: #d8c79a; }
 .sdstudio-group .sds-chip { display: inline-block; margin: 2px 4px 2px 0; padding: 1px 8px; border: 1px solid #888; border-radius: 999px; font-size: 0.8rem; }
+
+/* Group sheet: Foundry form defaults need overriding for dense tables and stacked text areas. */
+.sdstudio-group .form-group.stacked { display: flex; flex-direction: column; align-items: stretch; gap: 2px; }
+.sdstudio-group .form-group.stacked > label { flex: none; }
+.sdstudio-group .form-group.stacked textarea { width: 100%; min-height: 3.5rem; resize: vertical; font-family: inherit; font-size: 0.9rem; }
+.sdstudio-group .sds-members { table-layout: fixed; width: 100%; }
+.sdstudio-group .sds-members col.c-name { width: 16%; }
+.sdstudio-group .sds-members col.c-anc,
+.sdstudio-group .sds-members col.c-cls { width: 9%; }
+.sdstudio-group .sds-members col.c-num { width: 3.6%; }
+.sdstudio-group .sds-members col.c-gear { width: auto; }
+.sdstudio-group .sds-members col.c-del { width: 1.8rem; }
+.sdstudio-group .sds-members th { font-size: 0.75rem; text-align: left; padding: 2px; }
+.sdstudio-group table input { width: 100%; min-width: 0; height: 1.8rem; padding: 0 4px; font-size: 0.85rem; }
+.sdstudio-group table input.num { width: 100%; text-align: center; padding: 0 1px; }
+.sdstudio-group .sds-history { table-layout: fixed; }
+.sdstudio-group .sds-history th:nth-child(1) { width: 11rem; }
+.sdstudio-group .sds-history th:nth-child(2) { width: 4rem; }
+.sdstudio-group .sds-history th:nth-child(3) { width: 4.5rem; }
+.sdstudio-group .sds-history th:nth-child(5) { width: 1.8rem; }

@@ -1,6 +1,6 @@
 import { MODULE_ID } from "../constants.mjs";
 import { mountEditors, readForm } from "../forms.mjs";
-import { currentLanguage, labels, pick, t } from "../i18n.mjs";
+import { currentLanguage, labels, loadDictionaries, pick, t } from "../i18n.mjs";
 import { createsCycle, renameTalentId, sortedTiers } from "../progression.mjs";
 import { getRivals, getTree, saveRivals, saveTree } from "../store.mjs";
 
@@ -42,6 +42,7 @@ export class TalentEditor extends HandlebarsApplicationMixin(ApplicationV2) {
   }
 
   async _prepareContext(options) {
+    await loadDictionaries();
     const context = await super._prepareContext(options);
     const lang = currentLanguage();
     const tree = await getTree();

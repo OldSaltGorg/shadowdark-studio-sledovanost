@@ -1,5 +1,5 @@
 import { APP_ID, MODULE_ID } from "../constants.mjs";
-import { currentLanguage, labels, t } from "../i18n.mjs";
+import { currentLanguage, labels, loadDictionaries, t } from "../i18n.mjs";
 import { computeProgress } from "../progression.mjs";
 import { getStudio, getTree } from "../store.mjs";
 import { DEFAULT_CALENDAR } from "../rewards.mjs";
@@ -59,6 +59,7 @@ export class StudioApp extends HandlebarsApplicationMixin(ApplicationV2) {
   }
 
   async _prepareContext(options) {
+    await loadDictionaries();
     const context = await super._prepareContext(options);
     const lang = currentLanguage();
     const L = labels(lang);

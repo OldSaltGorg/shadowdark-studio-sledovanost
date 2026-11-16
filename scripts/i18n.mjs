@@ -2,9 +2,11 @@ import { LANGUAGES, MODULE_ID, MODULE_PATH, SETTINGS } from "./constants.mjs";
 
 const dictionaries = {};
 
-/** Load both UI dictionaries so the in-app language toggle works without a reload. */
-export async function loadDictionaries() {
-  await Promise.all(LANGUAGES.map(async lang => {
+let loading = null;
+
+/** Load both UI dictionaries once, so the in-app language toggle works without a reload. */
+export function loadDictionaries() {
+  loading ??= Promise.all(LANGUAGES.map(async lang => {
     try {
       const response = await fetch(foundry.utils.getRoute(`${MODULE_PATH}/lang/${lang}.json`));
       const json = await response.json();
@@ -14,6 +16,7 @@ export async function loadDictionaries() {
       dictionaries[lang] = {};
     }
   }));
+  return loading;
 }
 
 export function currentLanguage() {

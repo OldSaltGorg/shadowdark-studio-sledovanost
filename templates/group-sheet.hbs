@@ -36,6 +36,11 @@
     <fieldset>
       <legend>{{L.Board.Members}}</legend>
       <table class="sds-members">
+        <colgroup>
+          <col class="c-name"><col class="c-anc"><col class="c-cls"><col class="c-num">
+          {{#each statKeys}}<col class="c-num">{{/each}}
+          <col class="c-num"><col class="c-num"><col class="c-gear"><col class="c-del">
+        </colgroup>
         <thead>
           <tr>
             <th>{{L.Board.Name}}</th><th>{{L.Board.Ancestry}}</th><th>{{L.Board.Class}}</th><th>Lvl</th>

@@ -1,6 +1,6 @@
 import { MODULE_ID } from "../constants.mjs";
 import { readForm } from "../forms.mjs";
-import { currentLanguage, labels, pick, t } from "../i18n.mjs";
+import { currentLanguage, labels, loadDictionaries, pick, t } from "../i18n.mjs";
 import { generateMember, typicalLevel } from "../generator.mjs";
 import { groupScore, groupSP, latestChapter, PROFILES } from "../rivals.mjs";
 import { getRivals, getTree, saveRivals } from "../store.mjs";
@@ -52,6 +52,7 @@ export class GroupSheet extends HandlebarsApplicationMixin(ApplicationV2) {
   }
 
   async _prepareContext(options) {
+    await loadDictionaries();
     const context = await super._prepareContext(options);
     const lang = currentLanguage();
     const rivals = await getRivals();
@@ -89,6 +90,12 @@ export class GroupSheet extends HandlebarsApplicationMixin(ApplicationV2) {
         id: p.id, cost: p.cost, name: pick(tree.talents.find(x => x.id === p.id)?.name, lang) || p.id
       })) : null
     });
+  }
+
+  async _onRender(context, options) {
+    await super._onRender(context, options);
+    const title = this.element.querySelector(".window-title");
+    if (title) title.textContent = this.title;
   }
 
   /** Copy current form values into the draft before structural edits re-render the form. */
