@@ -1,0 +1,244 @@
+<div class="sds-root {{#if editMode}}editing{{/if}}">
+  <header class="sds-header">
+    <div class="sds-stat sds-popularity">
+      <label>{{L.Header.Popularity}}</label>
+      {{#if isGM}}
+      <input type="number" min="0" step="1" value="{{progress.popularity}}" data-state-field="popularity">
+      {{else}}
+      <span class="value">{{progress.popularity}}</span>
+      {{/if}}
+      <div class="sds-milestone" data-tooltip="{{progress.nextMilestoneText}}">
+        <div class="bar"><div class="fill" style="width: {{progress.toNext}}%"></div></div>
+        <span class="hint">{{progress.nextMilestoneText}}</span>
+      </div>
+    </div>
+    <div class="sds-stat">
+      <label>{{L.Header.Earned}}</label>
+      <span class="value">{{progress.earned}}</span>
+      <span class="hint">{{progress.milestones}} {{L.Header.Milestones}}</span>
+    </div>
+    <div class="sds-stat">
+      <label>{{L.Header.Spent}}</label>
+      <span class="value">{{progress.spent}}</span>
+      <span class="hint">{{progress.ownedCount}}/{{progress.totalCount}} {{L.Header.Owned}}</span>
+    </div>
+    <div class="sds-stat sds-available {{#if progress.availableNegative}}negative{{/if}}">
+      <label>{{L.Header.Available}}</label>
+      <span class="value">{{progress.available}}</span>
+      <span class="hint">SP</span>
+    </div>
+    {{#if isGM}}
+    <div class="sds-stat sds-adjust">
+      <label data-tooltip="{{L.Header.AdjustmentHint}}">{{L.Header.Adjustment}}</label>
+      <input type="number" step="1" value="{{progress.adjustment}}" data-state-field="spAdjustment">
+    </div>
+    {{/if}}
+
+    <div class="sds-toolbar">
+      <div class="sds-lang" role="group">
+        {{#each langs}}
+        <button type="button" data-action="setLanguage" data-lang="{{id}}" class="{{#if active}}active{{/if}}">{{label}}</button>
+        {{/each}}
+      </div>
+      {{#if isGM}}
+      <button type="button" class="sds-edit-toggle {{#if editMode}}active{{/if}}" data-action="toggleEdit">
+        <i class="fa-solid {{#if editMode}}fa-lock-open{{else}}fa-pen-ruler{{/if}}"></i> {{L.Action.EditMode}}
+      </button>
+      {{/if}}
+    </div>
+  </header>
+
+  {{#if editMode}}
+  <div class="sds-editbar">
+    <span class="hint"><i class="fa-solid fa-circle-info"></i> {{L.Edit.Help}}</span>
+    <button type="button" data-action="addBranch"><i class="fa-solid fa-plus"></i> {{L.Action.AddBranch}}</button>
+    <button type="button" data-action="addTier"><i class="fa-solid fa-plus"></i> {{L.Action.AddTier}}</button>
+    <button type="button" data-action="editIntro"><i class="fa-solid fa-book"></i> {{L.Action.EditIntro}}</button>
+    <button type="button" data-action="exportTree"><i class="fa-solid fa-file-export"></i> {{L.Action.Export}}</button>
+    <button type="button" data-action="importTree"><i class="fa-solid fa-file-import"></i> {{L.Action.Import}}</button>
+    <button type="button" data-action="resetTree" class="danger"><i class="fa-solid fa-rotate-left"></i> {{L.Action.Reset}}</button>
+  </div>
+  {{/if}}
+
+  <div class="sds-body">
+    <div class="sds-board-scroll">
+      <div class="sds-board" style="{{layout.style}}">
+        <svg class="sds-edges" xmlns="http://www.w3.org/2000/svg"></svg>
+
+        {{#each layout.separators}}
+        <div class="sds-sep sds-sep-{{kind}}" style="grid-column: {{col}}; grid-row: {{row}};"></div>
+        {{/each}}
+
+        {{#each layout.cells}}
+        <div class="sds-cell {{#if locked}}locked{{/if}}" style="grid-column: {{col}}; grid-row: {{row}}; --branch-color: {{color}};"></div>
+        {{/each}}
+
+        {{#each layout.headers}}
+        <div class="sds-branch-header {{#if selected}}selected{{/if}}" style="grid-column: {{col}}; grid-row: 1; --branch-color: {{color}};">
+          <button type="button" class="sds-branch-title" data-action="selectBranch" data-branch="{{id}}">{{name}}</button>
+          {{#if @root.editMode}}
+          <div class="sds-branch-tools">
+            <a data-action="moveBranch" data-branch="{{id}}" data-dir="-1" data-tooltip="{{@root.L.Action.MoveLeft}}"><i class="fa-solid fa-chevron-left"></i></a>
+            <a data-action="editBranch" data-branch="{{id}}" data-tooltip="{{@root.L.Action.Edit}}"><i class="fa-solid fa-pen"></i></a>
+            <a data-action="moveBranch" data-branch="{{id}}" data-dir="1" data-tooltip="{{@root.L.Action.MoveRight}}"><i class="fa-solid fa-chevron-right"></i></a>
+          </div>
+          {{/if}}
+        </div>
+        {{/each}}
+
+        {{#each layout.tierLabels}}
+        <div class="sds-tier-label {{#if unlocked}}unlocked{{else}}locked{{/if}}" style="grid-column: 1; grid-row: {{row}};">
+          <span class="tier-name">{{@root.L.Tier.Name}} {{label}}</span>
+          <span class="tier-cost">{{cost}}</span>
+          <span class="tier-status"><i class="fa-solid {{#if unlocked}}fa-lock-open{{else}}fa-lock{{/if}}"></i> {{status}}</span>
+          {{#if @root.editMode}}
+          <a class="tier-edit" data-action="editTier" data-tier="{{id}}" data-tooltip="{{@root.L.Action.Edit}}"><i class="fa-solid fa-pen"></i></a>
+          {{/if}}
+        </div>
+        {{/each}}
+
+        {{#each layout.slots}}
+        <button type="button" class="sds-slot" data-action="addTalent" data-drop-slot
+          data-branch="{{branch}}" data-tier="{{tier}}" data-r="{{r}}" data-c="{{c}}"
+          style="grid-column: {{col}}; grid-row: {{row}};" data-tooltip="{{@root.L.Action.AddTalent}}">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+        {{/each}}
+
+        {{#each layout.nodes}}
+        <button type="button" class="sds-node state-{{state}} {{#if selected}}selected{{/if}} {{#if related}}related{{/if}}"
+          data-action="selectTalent" data-id="{{id}}" data-tooltip="{{tooltip}}"
+          {{#if @root.editMode}}draggable="true" data-drop-slot data-branch="{{branch}}" data-tier="{{tier}}" data-r="{{r}}" data-c="{{c}}"{{/if}}
+          style="grid-column: {{col}}; grid-row: {{row}}; --branch-color: {{color}};">
+          <span class="node-name">{{name}}</span>
+          {{#if hasCondition}}<i class="node-flag fa-solid fa-circle-exclamation"></i>{{/if}}
+          {{#if (eq state "purchased")}}<i class="node-badge fa-solid fa-check"></i>{{/if}}
+          {{#if (eq state "locked")}}<i class="node-badge fa-solid fa-lock"></i>{{/if}}
+          {{#if @root.editMode}}<span class="node-id">{{id}}</span>{{/if}}
+        </button>
+        {{/each}}
+      </div>
+
+      {{#if layout.orphans.length}}
+      <div class="sds-orphans">
+        <strong>{{L.Detail.Orphans}}</strong>
+        {{#each layout.orphans}}
+        <a data-action="editTalent" data-id="{{id}}">{{id}} — {{name}}</a>
+        {{/each}}
+      </div>
+      {{/if}}
+
+      <div class="sds-legend">
+        <span class="lg state-purchased">{{L.Status.purchased}}</span>
+        <span class="lg state-available">{{L.Status.available}}</span>
+        <span class="lg state-unaffordable">{{L.Status.unaffordable}}</span>
+        <span class="lg state-locked">{{L.Status.locked}}</span>
+      </div>
+    </div>
+
+    <aside class="sds-detail" style="--branch-color: {{detail.color}};">
+      {{#if (eq detail.type "talent")}}
+      <div class="sds-detail-head">
+        <a class="sds-back" data-action="clearSelection" data-tooltip="{{L.Detail.Overview}}"><i class="fa-solid fa-xmark"></i></a>
+        <span class="sds-detail-meta">{{detail.branchName}} · {{L.Tier.Name}} {{detail.tierLabel}} · {{detail.cost}} SP{{#if editMode}} · {{detail.id}}{{/if}}</span>
+        <h2>{{detail.name}}</h2>
+        <span class="sds-status-pill state-{{detail.state}}">{{detail.stateLabel}}</span>
+      </div>
+
+      {{#if detail.purchasedOn}}
+      <p class="sds-purchased-on"><i class="fa-solid fa-check"></i> {{L.Detail.PurchasedOn}} {{detail.purchasedOn}} ({{detail.paid}} SP)</p>
+      {{/if}}
+
+      {{#if detail.reasons.length}}
+      <ul class="sds-reasons">
+        {{#each detail.reasons}}<li><i class="fa-solid fa-lock"></i> {{this}}</li>{{/each}}
+      </ul>
+      {{/if}}
+
+      {{#if detail.condition}}
+      <p class="sds-condition"><i class="fa-solid fa-circle-exclamation"></i> <strong>{{L.Detail.Condition}}:</strong> {{detail.condition}}</p>
+      {{/if}}
+
+      <div class="sds-description">{{{detail.description}}}</div>
+
+      {{#if detail.prereqs.length}}
+      <h3>{{L.Detail.Prerequisites}}</h3>
+      <ul class="sds-links">
+        {{#each detail.prereqs}}
+        <li><a data-action="selectTalent" data-id="{{id}}" class="{{#if owned}}owned{{/if}}"><i class="fa-solid {{#if owned}}fa-check{{else}}fa-xmark{{/if}}"></i> {{name}}</a></li>
+        {{/each}}
+      </ul>
+      {{/if}}
+
+      {{#if detail.unlocks.length}}
+      <h3>{{L.Detail.Unlocks}}</h3>
+      <ul class="sds-links">
+        {{#each detail.unlocks}}
+        <li><a data-action="selectTalent" data-id="{{id}}" class="{{#if owned}}owned{{/if}}"><i class="fa-solid fa-arrow-right"></i> {{name}}</a></li>
+        {{/each}}
+      </ul>
+      {{/if}}
+
+      {{#if isGM}}
+      <div class="sds-actions">
+        {{#if detail.canPurchase}}
+        <button type="button" class="primary" data-action="purchase" data-id="{{detail.id}}"><i class="fa-solid fa-cart-shopping"></i> {{L.Action.Purchase}} ({{detail.cost}} SP)</button>
+        {{/if}}
+        {{#if detail.canGrant}}
+        <button type="button" data-action="grant" data-id="{{detail.id}}"><i class="fa-solid fa-gavel"></i> {{L.Action.Grant}}</button>
+        {{/if}}
+        {{#if detail.canRefund}}
+        <button type="button" data-action="refund" data-id="{{detail.id}}"><i class="fa-solid fa-rotate-left"></i> {{L.Action.Refund}}</button>
+        {{/if}}
+        {{#if editMode}}
+        <button type="button" data-action="editTalent" data-id="{{detail.id}}"><i class="fa-solid fa-pen"></i> {{L.Action.Edit}}</button>
+        <button type="button" class="danger" data-action="deleteTalent" data-id="{{detail.id}}"><i class="fa-solid fa-trash"></i> {{L.Action.Delete}}</button>
+        {{/if}}
+      </div>
+      {{/if}}
+
+      {{else if (eq detail.type "branch")}}
+      <div class="sds-detail-head">
+        <a class="sds-back" data-action="clearSelection" data-tooltip="{{L.Detail.Overview}}"><i class="fa-solid fa-xmark"></i></a>
+        <span class="sds-detail-meta">{{detail.owned}}/{{detail.total}} {{L.Header.Owned}}</span>
+        <h2>{{detail.name}}</h2>
+      </div>
+      <div class="sds-description">{{{detail.description}}}</div>
+      {{#if editMode}}
+      <div class="sds-actions">
+        <button type="button" data-action="editBranch" data-branch="{{detail.id}}"><i class="fa-solid fa-pen"></i> {{L.Action.Edit}}</button>
+        {{#if detail.canDelete}}
+        <button type="button" class="danger" data-action="deleteBranch" data-branch="{{detail.id}}"><i class="fa-solid fa-trash"></i> {{L.Action.Delete}}</button>
+        {{/if}}
+      </div>
+      {{/if}}
+
+      {{else}}
+      <div class="sds-detail-head">
+        <h2>{{L.Detail.Overview}}</h2>
+      </div>
+      <p class="hint">{{L.Detail.SelectHint}}</p>
+      <h3>{{L.Detail.Tiers}}</h3>
+      <ul class="sds-tier-list">
+        {{#each detail.tiers}}
+        <li class="{{#if unlocked}}unlocked{{/if}}">
+          <i class="fa-solid {{#if unlocked}}fa-lock-open{{else}}fa-lock{{/if}}"></i>
+          <strong>{{@root.L.Tier.Name}} {{label}}</strong> — {{cost}} SP · {{@root.L.Detail.OpensAfter}} {{unlockSpent}}
+        </li>
+        {{/each}}
+      </ul>
+      <h3>{{L.Detail.Owned}}</h3>
+      {{#if detail.owned.length}}
+      <ul class="sds-links">
+        {{#each detail.owned}}
+        <li><a data-action="selectTalent" data-id="{{id}}" style="--branch-color: {{color}};" class="owned"><i class="fa-solid fa-check"></i> {{name}}</a></li>
+        {{/each}}
+      </ul>
+      {{else}}
+      <p class="hint">{{L.Detail.NoneOwned}}</p>
+      {{/if}}
+      <div class="sds-description sds-intro">{{{detail.description}}}</div>
+      {{/if}}
+    </aside>
+  </div>
+</div>

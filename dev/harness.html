@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Studio tree harness</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="/styles/studio.css">
+  <style>
+    body { margin: 0; background: #444; font-family: "Signika", sans-serif; color: #ddd; }
+    #windows { position: relative; padding: 10px; display: flex; flex-direction: column; gap: 10px; }
+    .app { display: flex; flex-direction: column; background: #1b1b1d; border: 1px solid #000; box-shadow: 0 0 12px #000; }
+    .window-header { display: flex; justify-content: space-between; padding: 4px 8px; background: #111; }
+    .window-header h1 { font-size: 14px; margin: 0; }
+    .window-content { flex: 1; min-height: 0; overflow: hidden; }
+    button { cursor: pointer; background: #333; color: #ddd; border: 1px solid #666; border-radius: 3px; padding: 2px 8px; }
+    input, select { background: #222; color: #ddd; border: 1px solid #555; }
+    .harness-bar { padding: 6px 10px; background: #222; }
+    .form-group { display: flex; gap: 8px; margin: 4px 0; align-items: center; }
+    .form-group label { flex: 0 0 140px; }
+    .form-group.stacked { flex-direction: column; align-items: stretch; }
+    dialog { background: #2a2a2a; color: #ddd; min-width: 420px; }
+  </style>
+  <script src="/dev/vendor/handlebars.min.js"></script>
+  <script src="/dev/foundry-stub.js"></script>
+</head>
+<body>
+  <div class="harness-bar">
+    <a href="?gm=1">GM</a> · <a href="?gm=0">Player</a> ·
+    <button onclick="localStorage.removeItem('sds-harness'); location.reload()">Clear storage</button>
+  </div>
+  <div id="windows"></div>
+  <script type="module">
+    await import("/scripts/main.mjs");
+    await Hooks.callAll("init");
+    await Hooks.callAll("ready");
+    await game.modules.get("shadowdark-studio-sledovanost").api.open();
+  </script>
+</body>
+</html>

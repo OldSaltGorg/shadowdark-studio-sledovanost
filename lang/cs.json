@@ -1,0 +1,130 @@
+{
+  "SDSTUDIO": {
+    "Title": "Autorské studio — Vylepšení",
+    "Control": "Vylepšení studia",
+    "Settings": {
+      "Language": {
+        "Name": "Jazyk stromu studia",
+        "Hint": "Jazyk stromu vylepšení na tomto zařízení. Lze přepnout i přímo v okně.",
+        "Auto": "Podle jazyka Foundry"
+      }
+    },
+    "Header": {
+      "Popularity": "Sledovanost",
+      "NextMilestone": "Další milník při {score} (+{sp} SP)",
+      "Earned": "Získané SP",
+      "Milestones": "milníků",
+      "Spent": "Utracené SP",
+      "Owned": "vlastněno",
+      "Available": "Dostupné SP",
+      "Adjustment": "Úprava SP",
+      "AdjustmentHint": "Oprava PJ přičtená k získaným SP (může být záporná)."
+    },
+    "Tier": {
+      "Name": "Stupeň",
+      "Cost": "{cost} SP",
+      "Unlocked": "Otevřeno",
+      "Locked": "Zamčeno ({need} utraceno)"
+    },
+    "Status": {
+      "purchased": "Vlastněno",
+      "available": "Dostupné",
+      "unaffordable": "Nedostatek SP",
+      "locked": "Zamčeno"
+    },
+    "Reason": {
+      "Tier": "Stupeň se otevře po utracení {need} SP za vylepšení (zatím utraceno: {spent}).",
+      "Prereq": "Vyžaduje: {names}.",
+      "SP": "Stojí {need} SP; dostupné {available}.",
+      "NoTier": "Stupeň tohoto vylepšení už neexistuje."
+    },
+    "Detail": {
+      "Overview": "Přehled studia",
+      "SelectHint": "Vyberte vylepšení pro zobrazení celého účinku. Šipky ukazují podmínky.",
+      "Tiers": "Stupně",
+      "OpensAfter": "otevře se po utracení SP:",
+      "Owned": "Vlastněná vylepšení",
+      "NoneOwned": "Zatím žádná zakoupená vylepšení.",
+      "Prerequisites": "Podmínky",
+      "Unlocks": "Navazuje",
+      "Condition": "Další podmínka",
+      "PurchasedOn": "Zakoupeno",
+      "Orphans": "Vylepšení bez platné větve nebo stupně:"
+    },
+    "Action": {
+      "EditMode": "Upravit strom",
+      "Purchase": "Koupit",
+      "Grant": "Přesto udělit",
+      "Refund": "Vrátit",
+      "Edit": "Upravit",
+      "Delete": "Smazat",
+      "Save": "Uložit",
+      "Cancel": "Zrušit",
+      "AddTalent": "Přidat vylepšení sem",
+      "AddBranch": "Přidat větev",
+      "AddTier": "Přidat stupeň",
+      "EditIntro": "Upravit text přehledu",
+      "MoveLeft": "Posunout doleva",
+      "MoveRight": "Posunout doprava",
+      "Export": "Exportovat",
+      "Import": "Importovat",
+      "Reset": "Obnovit výchozí"
+    },
+    "Confirm": {
+      "Purchase": "Koupit <strong>{name}</strong> za {cost} SP? Celá skupina by se na tom měla shodnout při revizi smlouvy.",
+      "Grant": "Udělit <strong>{name}</strong> za {cost} SP, i když nejsou splněny podmínky?",
+      "NegativeSP": "Studio tím bude mít záporné SP.",
+      "Refund": "Vrátit <strong>{name}</strong> a připsat zpět {cost} SP? Používejte jen k opravě chyb.",
+      "RefundDependents": "Na tomto vylepšení závisí vlastněná vylepšení: {names}.",
+      "DeleteTalent": "Smazat vylepšení <strong>{name}</strong>? Odstraní se i z podmínek ostatních vylepšení.",
+      "DeleteBranch": "Smazat tuto prázdnou větev?",
+      "Reset": "Nahradit celý strom výchozí verzí z modulu? Nákupy zůstanou zachovány; pro zálohu nejdřív exportujte."
+    },
+    "Notify": {
+      "CannotPurchase": "Toto vylepšení teď nelze koupit.",
+      "RefundBeforeDelete": "Před smazáním vylepšení nejdřív vraťte.",
+      "BranchNotEmpty": "Nejdřív přesuňte nebo smažte vylepšení této větve.",
+      "Imported": "Strom studia byl importován.",
+      "ImportFailed": "Import selhal: soubor není platný export stromu studia.",
+      "InvalidId": "ID smí obsahovat jen písmena, čísla, - a _.",
+      "DuplicateId": "ID {id} už je použité.",
+      "Cycle": "Tyto podmínky by vytvořily kruhovou závislost.",
+      "NameRequired": "Zadejte název alespoň v jednom jazyce."
+    },
+    "Import": {
+      "File": "Soubor exportu",
+      "IncludeState": "Obnovit i Sledovanost a nákupy",
+      "Hint": "Nahradí současný strom stromem ze souboru."
+    },
+    "Edit": {
+      "Help": "Přetažením vylepšení přesunete nebo prohodíte; + přidá nové; tužka u stupně či větve je upraví.",
+      "Talent": "Upravit vylepšení {id}",
+      "NewTalent": "Nové vylepšení",
+      "Id": "ID",
+      "BranchField": "Větev",
+      "TierField": "Stupeň",
+      "Position": "Řádek / sloupec v buňce",
+      "Row": "Řádek ve stupni (0 = nahoře)",
+      "Col": "Sloupec ve větvi (0 = vlevo)",
+      "Name": "Název",
+      "Condition": "Další podmínka",
+      "ConditionHint": "Volitelné, např. alespoň jeden sponzor",
+      "Description": "Účinek",
+      "Prereqs": "Podmínky",
+      "PrereqHint": "Všechna zaškrtnutá vylepšení musí být nejdřív vlastněna. Prahy stupňů platí zvlášť.",
+      "Branch": "Upravit větev",
+      "NameCs": "Název (česky)",
+      "NameEn": "Název (anglicky)",
+      "Prefix": "Předpona ID",
+      "Color": "Barva",
+      "DescriptionCs": "Popis (česky)",
+      "DescriptionEn": "Popis (anglicky)",
+      "Tier": "Upravit stupeň",
+      "TierLabel": "Označení",
+      "TierCost": "Cena vylepšení (SP)",
+      "TierUnlock": "Otevře se po utracení SP",
+      "TierHint": "Změna ceny platí pro budoucí nákupy; dřívější nákupy si ponechají zaplacenou cenu.",
+      "Intro": "Text přehledu"
+    }
+  }
+}

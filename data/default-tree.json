@@ -1,0 +1,903 @@
+{
+  "schema": 1,
+  "intro": {
+    "cs": "<p>Tři sloupce — <strong>Rozhraní, Zázemí, Redakce</strong> — sdílejí stejné prahy stupňů. Sloupce jsou kategorie, nikoli povinné nákupní cesty. Všechny návaznosti určuje sloupec Podmínky; další se neodvozují z rozmístění. Pomlčka znamená, že kromě otevření stupně není další podmínka.</p><p>Veškerá úložná kapacita níže znamená <strong>běžné inventářové sloty celé redakce</strong>. Jde o kapacitu mimo postavu, nikoli další sloty pro nesené vybavení. Předměty zůstávají skutečné; nelze je kopírovat ani za ně opakovaně získávat XP za poklad.</p>",
+    "en": "<p>Three columns—<strong>Interface, Utility, Editorial</strong>—share the same tier thresholds. Columns are categories, not mandatory purchase paths. The prerequisite column defines all dependencies; no others are inferred from placement. A dash means no prerequisite beyond the tier threshold.</p><p>All storage figures below are <strong>ordinary inventory slots shared by the entire studio</strong>. They are off-character capacity, not extra carried slots. Items remain real and cannot be duplicated or credited with treasure XP twice.</p>"
+  },
+  "rules": {
+    "spPerMilestone": 2
+  },
+  "tiers": [
+    {
+      "id": 1,
+      "label": "I",
+      "cost": 1,
+      "unlockSpent": 0
+    },
+    {
+      "id": 2,
+      "label": "II",
+      "cost": 2,
+      "unlockSpent": 4
+    },
+    {
+      "id": 3,
+      "label": "III",
+      "cost": 3,
+      "unlockSpent": 10
+    }
+  ],
+  "branches": [
+    {
+      "id": "interface",
+      "prefix": "I",
+      "color": "#5cb8b2",
+      "name": {
+        "cs": "Rozhraní",
+        "en": "Interface"
+      },
+      "description": {
+        "cs": "<p>Komunikační kanály studia jsou myšleny jako \"metagaming\" služby uvnitř fikce. Běžná domluva u stolu, hráčské poznámky a rozhovory tváří v tvář zůstávají. Vzdálené kanály přenášejí zprávy, nikoli předměty, kouzla, ani akce, které účastníci nemají.</p>",
+        "en": "<p>Studio communication channels are fictional metagaming services. Ordinary table discussion, player notes and face-to-face speech remain available. Remote channels carry messages, not items, spells or actions.</p>"
+      }
+    },
+    {
+      "id": "utility",
+      "prefix": "U",
+      "color": "#d0607f",
+      "name": {
+        "cs": "Zázemí",
+        "en": "Utility"
+      },
+      "description": {
+        "cs": "<p><strong>Přístup domů:</strong> do vlastních prostor vstupujte pouze přes existující Bezpečné místo. Studio má vždy jediný aktivní vstupní bod. Východ vede k aktivnímu vstupnímu bodu. Žádné vybírání zásob v terénu, teleportace mezi Bezpečnými místy, dodatečný bezpečný odpočinek ani ukrývání přes uzavření kapitoly. Čas i termíny běží dál. Obsah, dekorace a instalované vybavení přetrvávají při výměně protagonisty.</p><p><em>Některé soukromé prostory vylučují běžný dohled Čtenářů a Agregátoru. Fyzické vniknutí nebo infiltrace je možná pouze pokud je entita pozvána dovnitř.</em></p>",
+        "en": "<p><strong>Home access:</strong> enter owned premises only through an existing Safe Haven. The studio has one active haven anchor at a time; the exit returns to that anchor. No field retrieval, haven-to-haven teleportation, extra safe rests or hiding through chapter closure. Time and deadlines continue. Contents, cosmetic fixtures and installed facilities persist through protagonist replacement.</p><p><em>Some private spaces exclude ordinary Reader and Aggregator monitoring. An entity can physically enter or infiltrate only if invited inside.</em></p>"
+      }
+    },
+    {
+      "id": "editorial",
+      "prefix": "E",
+      "color": "#4cb782",
+      "name": {
+        "cs": "Redakce",
+        "en": "Editorial"
+      },
+      "description": {
+        "cs": "<p>Informační služby přinášejí konkrétní vodítka, nikoli vševědoucí odpovědi. Zásadní informace ohledně kampaně lze objevit i bez nákupů. Sponzorské odměny nahrazují již plánované odměny; nepřidávají duplicitní poklad ani XP. Přestavba postav mezi kapitolami může být za zvláštních podmínek k dispozici i bez těchto vylepšení.</p>",
+        "en": "<p>Information services provide concrete leads, not omniscient answers. Essential campaign information remains discoverable without purchases. Sponsor rewards replace already planned rewards rather than adding duplicate treasure or XP. Character rebuilds between chapters may also be available without these upgrades under special circumstances.</p>"
+      }
+    }
+  ],
+  "talents": [
+    {
+      "id": "I11",
+      "branch": "interface",
+      "tier": 1,
+      "row": 0,
+      "col": 0,
+      "name": {
+        "cs": "Deník úkolů — základní",
+        "en": "Quest Journal — Basic"
+      },
+      "description": {
+        "cs": "<p>Udržuje známé cíle, termíny a neuzavřené záležitosti. Jednou za kapitolu lze požádat o jednu užitečnou souvislost a další krok vycházející ze známých důkazů. Pokud žádné nejsou, PJ to sdělí a použití zůstává zachováno.</p>",
+        "en": "<p>Maintains known objectives, deadlines and loose ends. Once per chapter, request one actionable connection and next step grounded in established evidence. If none exists, the GM states that and preserves the use.</p>"
+      },
+      "prereqs": [],
+      "condition": {
+        "cs": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "I12",
+      "branch": "interface",
+      "tier": 1,
+      "row": 0,
+      "col": 1,
+      "name": {
+        "cs": "Soukromý skupinový chat",
+        "en": "Private Group Chat"
+      },
+      "description": {
+        "cs": "<p>Textový kanál, který můžou členové redakce využívat jako vysílačku/telepatii na vzdálenost Far (město, dungeon, lesík). NPC ani monstra jej nevnímají.<br><em>Běžný dohled Čtenářů ani Agregátoru jej nemůže číst.</em></p>",
+        "en": "<p>A text channel the studio's Ghostwriters can use like a walkie-talkie or telepathy over Far range, such as a town, dungeon or small forest. NPCs and monsters do not perceive it. <em>Ordinary Reader and Aggregator monitoring cannot read it.</em></p>"
+      },
+      "prereqs": [],
+      "condition": {
+        "cs": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "I13",
+      "branch": "interface",
+      "tier": 1,
+      "row": 0,
+      "col": 2,
+      "name": {
+        "cs": "Ukazatele zdraví I",
+        "en": "Health Bars I"
+      },
+      "description": {
+        "cs": "<p>Zobrazuje stav zdraví monster a spojenců. Pouze nepřímé popisky jako \"Injured, Bloodied, atp.\"</p>",
+        "en": "<p>Displays the health of monsters and allies using only indirect labels, such as “Injured” or “Bloodied”.</p>"
+      },
+      "prereqs": [],
+      "condition": {
+        "cs": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "I21",
+      "branch": "interface",
+      "tier": 2,
+      "row": 0,
+      "col": 0,
+      "name": {
+        "cs": "Deník úkolů — pokročilý",
+        "en": "Quest Journal — Advanced"
+      },
+      "description": {
+        "cs": "<p>Zobrazuje typ každého úkolu a jeho přesnou odměnu (XP i hmotnou). Společný limit nápověd deníku se zvyšuje na dvě za kapitolu pro každý typ questu.</p>",
+        "en": "<p>Displays each quest's type and exact reward, including XP and material rewards. The journal's shared hint allowance increases to two per chapter for each quest type.</p>"
+      },
+      "prereqs": [
+        "I11"
+      ],
+      "condition": {
+        "cs": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "I22",
+      "branch": "interface",
+      "tier": 2,
+      "row": 0,
+      "col": 1,
+      "name": {
+        "cs": "Omezený soukromý hlasový hovor",
+        "en": "Limited Private VC"
+      },
+      "description": {
+        "cs": "<p>Členové redakce mohou již bezúhonně využívat hlasový kanál a domlouvat se, či předávat informace mezi protagonisty s pomocí hlasu.</p>",
+        "en": "<p>Studio Ghostwriters can freely use a voice channel to coordinate or pass information between their protagonists by voice.</p>"
+      },
+      "prereqs": [
+        "I12"
+      ],
+      "condition": {
+        "cs": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "I23",
+      "branch": "interface",
+      "tier": 2,
+      "row": 1,
+      "col": 1,
+      "name": {
+        "cs": "Přímé zprávy",
+        "en": "Direct MSGs"
+      },
+      "description": {
+        "cs": "<p>Soukromé textové zprávy mezi protagonisty, najatými NPC či jinými entitami kdekoli ve stejném regionu kapitoly. Pouze známé kontakty, které dali souhlas; kanál nevyhledává kontakty ani nepřekračuje hranice kapitoly.</p>",
+        "en": "<p>Private text messages between protagonists, hired NPCs or other entities anywhere within the same chapter region. Only known contacts who have consented can participate; the channel does not discover contacts or cross chapter boundaries.</p>"
+      },
+      "prereqs": [
+        "I12"
+      ],
+      "condition": {
+        "cs": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "I24",
+      "branch": "interface",
+      "tier": 2,
+      "row": 0,
+      "col": 2,
+      "name": {
+        "cs": "Ukazatele zdraví II",
+        "en": "Health Bars II"
+      },
+      "description": {
+        "cs": "<p>Po zahájení boje graficky zobrazuje poměr zdraví/zranění u viditelných nepřátel a spřátelených NPC či protagonistů. Neodhaluje skryté tvory, schopnosti, odolnosti ani maximum HP.</p>",
+        "en": "<p>After combat begins, graphically displays the proportion of health and injury for visible enemies, friendly NPCs and protagonists. Does not reveal hidden creatures, abilities, resistances or maximum HP.</p>"
+      },
+      "prereqs": [
+        "I13"
+      ],
+      "condition": {
+        "cs": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "I31",
+      "branch": "interface",
+      "tier": 3,
+      "row": 0,
+      "col": 0,
+      "name": {
+        "cs": "Deník úkolů — mistrovský",
+        "en": "Quest Journal — Master"
+      },
+      "description": {
+        "cs": "<p>Zvyšuje společný limit nápověd na tři za kapitolu a typ úkolu.<br>Přidává sekci známých monster a jejich objevených schopností, sil a slabin.</p>",
+        "en": "<p>Increases the shared hint allowance to three per chapter for each quest type. Adds a section for known monsters and their discovered abilities, strengths and weaknesses.</p>"
+      },
+      "prereqs": [
+        "I21"
+      ],
+      "condition": {
+        "cs": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "I32",
+      "branch": "interface",
+      "tier": 3,
+      "row": 0,
+      "col": 1,
+      "name": {
+        "cs": "Neomezený soukromý chat",
+        "en": "Unlimited Private Chat"
+      },
+      "description": {
+        "cs": "<p>Neomezená textová i hlasová komunikace studia kdekoliv v rámci kapitoly.</p>",
+        "en": "<p>Unlimited studio text and voice communication anywhere within the chapter.</p>"
+      },
+      "prereqs": [
+        "I12"
+      ],
+      "condition": {
+        "cs": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "I33",
+      "branch": "interface",
+      "tier": 3,
+      "row": 0,
+      "col": 2,
+      "name": {
+        "cs": "Ukazatele zdraví III",
+        "en": "Health Bars III"
+      },
+      "description": {
+        "cs": "<p>Nahrazuje poměr přesnými současnými a maximálními HP viditelných spojenců a viditelných nepřátel zapojených do boje. Nevyhledává tvory ani nezpřístupňuje jiné statistiky.</p>",
+        "en": "<p>Replaces the health proportion with exact current and maximum HP for visible allies and visible enemies engaged in combat. Does not detect creatures or reveal other statistics.</p>"
+      },
+      "prereqs": [
+        "I24"
+      ],
+      "condition": {
+        "cs": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "I34",
+      "branch": "interface",
+      "tier": 3,
+      "row": 1,
+      "col": 0,
+      "name": {
+        "cs": "Veřejný chat — město",
+        "en": "Global Chat — Town"
+      },
+      "description": {
+        "cs": "<p>Rozhlasová komunikace v rámci města pro všechny NPC a/nebo Protagonisty. Každý s tímto vylepšením může přímo odpovídat.</p>",
+        "en": "<p>Town-wide broadcast communication to all NPCs and/or protagonists. Anyone with this upgrade can reply directly.</p>"
+      },
+      "prereqs": [
+        "I32"
+      ],
+      "condition": {
+        "cs": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "I35",
+      "branch": "interface",
+      "tier": 3,
+      "row": 1,
+      "col": 1,
+      "name": {
+        "cs": "Veřejný chat — region",
+        "en": "Global Chat — Region"
+      },
+      "description": {
+        "cs": "<p>Rozhlasová komunikace na veřejnému textovému kanálu pro celý region podle stejných pravidel jako město. Městský chat není podmínkou.</p>",
+        "en": "<p>Broadcast communication on a public text channel across the entire region, under the same rules as Town Chat. Town Chat is not a prerequisite.</p>"
+      },
+      "prereqs": [
+        "I32"
+      ],
+      "condition": {
+        "cs": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "I36",
+      "branch": "interface",
+      "tier": 3,
+      "row": 1,
+      "col": 2,
+      "name": {
+        "cs": "Veřejný chat — kapitola",
+        "en": "Global Chat — Chapter"
+      },
+      "description": {
+        "cs": "<p>Rozhlasová komunikace na veřejnému textovému kanálu pro celou kapitolu podle stejných pravidel. Městský ani regionální chat nejsou podmínkou.</p>",
+        "en": "<p>Broadcast communication on a public text channel across the entire chapter under the same rules. Town and Region Chat are not prerequisites.</p>"
+      },
+      "prereqs": [
+        "I32"
+      ],
+      "condition": {
+        "cs": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "U11",
+      "branch": "utility",
+      "tier": 1,
+      "row": 0,
+      "col": 0,
+      "name": {
+        "cs": "Soukromý sklad — 10 slotů",
+        "en": "Private Storage — 10 slots"
+      },
+      "description": {
+        "cs": "<p>Trvalý sklad u aktivního vstupního bodu na Bezpečném místě. Pouze zabezpečená truhla, nikoli obytné prostory. Všichni momentální i budoucí protagonisté vašeho Stínového studia mají přístup.</p>",
+        "en": "<p>Persistent storage at the active Safe Haven anchor: a secured chest only, not living quarters. All current and future protagonists of the Ghostwriters' Studio have access.</p>"
+      },
+      "prereqs": [],
+      "condition": {
+        "cs": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "U12",
+      "branch": "utility",
+      "tier": 1,
+      "row": 0,
+      "col": 1,
+      "name": {
+        "cs": "Výhoda při hýření",
+        "en": "Carousing Bonus"
+      },
+      "description": {
+        "cs": "<p>Výhoda (kh2d8) na běžnou tabulku výsledků hýření, vybere se jeden výsledek. Každý získá pouze XP a následky z vyššího výsledku. Ostatní hody zůstávají stejné.</p>",
+        "en": "<p>Roll with advantage on the normal carousing outcome table: 2d8, keep the higher result. Each participant receives only the XP and consequences of that higher result. Other rolls remain unchanged.</p>"
+      },
+      "prereqs": [],
+      "condition": {
+        "cs": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "U13",
+      "branch": "utility",
+      "tier": 1,
+      "row": 0,
+      "col": 2,
+      "name": {
+        "cs": "Výhody v hostincích",
+        "en": "Tavern Benefits"
+      },
+      "description": {
+        "cs": "<p>Zaručené běžné ubytování a soukromý stůl pro schůzky ve fungujících hostincích na Bezpečných místech. Ubytovaní na jednu noc zdarma. Větší šance, že hostinec nebude úplný pajzl. Žádná sleva na hýření, vybavení ani výdaje přinášející XP.</p>",
+        "en": "<p>Guaranteed ordinary lodging and a private meeting table at operating taverns in Safe Havens. One night's lodging is free. There is a greater chance the tavern will not be a complete dive. No discount on carousing, equipment or XP-bearing expenditure.</p>"
+      },
+      "prereqs": [],
+      "condition": {
+        "cs": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "U21",
+      "branch": "utility",
+      "tier": 2,
+      "row": 0,
+      "col": 0,
+      "name": {
+        "cs": "Soukromé prostory — 20 slotů",
+        "en": "Private Space — 20 slots"
+      },
+      "description": {
+        "cs": "<p>Trvalá upravitelná společenská místnost a osobní pokoje; sklad se rozšiřuje na zabezpečenou truhlu o 20 slotech. Prostory pojmou manažera a dva souhlasící nebojující hosty. Hosté potřebují legální cestu na Bezpečné místo. Kapacita nahrazuje původních 10 slotů; kapacity se nesčítají.</p>",
+        "en": "<p>A persistent customisable common room and personal quarters; storage expands to a secured 20-slot chest. The space accommodates a manager and two consenting noncombatant guests, who need a legal route to the Safe Haven. The 20-slot capacity replaces the original 10 slots; capacities do not stack.</p>"
+      },
+      "prereqs": [
+        "U11"
+      ],
+      "condition": {
+        "cs": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "U22",
+      "branch": "utility",
+      "tier": 2,
+      "row": 0,
+      "col": 1,
+      "name": {
+        "cs": "Rychlejší hýření",
+        "en": "Faster Carousing"
+      },
+      "description": {
+        "cs": "<p>Běžná herní doba hýření se půlí, zaokrouhlená nahoru na běžnou jednotku sledování času, nejméně jednu noc. Zlato, hody, rizika i XP zůstávají stejné. Žádná dodatečná vyhodnocení Sledovanosti.</p>",
+        "en": "<p>Halve normal in-world carousing duration, rounded up to the normal tracking increment, minimum one night. Gold, rolls, risks and XP are unchanged. No extra Sledovanost settlements.</p>"
+      },
+      "prereqs": [],
+      "condition": {
+        "cs": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "U23",
+      "branch": "utility",
+      "tier": 2,
+      "row": 0,
+      "col": 2,
+      "name": {
+        "cs": "Výhody ve městech",
+        "en": "Town Benefits"
+      },
+      "description": {
+        "cs": "<p>Při prvním vstupu do nového města si můžete vybrat jeden obchod, který bude zaručeně přítomen. Také se odemkne možnost město spravovat (starosta či vůdce můsí být zabit nebo dobrovolně předat velení jednomu z protagonistů).</p>",
+        "en": "<p>On first entering a new town, choose one shop that is guaranteed to be present. Also unlocks the ability to manage the town: its mayor or leader must be killed or voluntarily hand over command to one of the protagonists.</p>"
+      },
+      "prereqs": [
+        "U13"
+      ],
+      "condition": {
+        "cs": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "U24",
+      "branch": "utility",
+      "tier": 2,
+      "row": 1,
+      "col": 0,
+      "name": {
+        "cs": "Zkušebna",
+        "en": "Rehearsal Room"
+      },
+      "description": {
+        "cs": "<p>Umožní trénovat a naučit se jeden zvolený skill i v rámci hýření. Naučená schopnost umožní provádět nové akce, získat výhodu na specifické zkoušky, atp. (pravidla p.91). Potřebná zkouška inteligence se sníží na DC 16.</p>",
+        "en": "<p>Enables training and learning one chosen skill during carousing. The learned skill can permit new actions, grant advantage on specific checks, and so on, using the rules on page 91. The required Intelligence check is reduced to DC 16.</p>"
+      },
+      "prereqs": [
+        "U21"
+      ],
+      "condition": {
+        "cs": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "U25",
+      "branch": "utility",
+      "tier": 2,
+      "row": 1,
+      "col": 1,
+      "name": {
+        "cs": "Zotavovna",
+        "en": "Recovery Room"
+      },
+      "description": {
+        "cs": "<p>Odpočinek v Soukromých prostorech Bezpečného místa trvá polovinu obvyklé herní doby (4h).<br>Bezpečí a zásoby jsou zajištěny. Obnoví se pouze to, co obnovuje běžný úplný odpočinek; žádné vzkříšení ani další příděl zdrojů.</p>",
+        "en": "<p>A rest in the private space at a Safe Haven takes half the usual in-world time (4 hours). Safety and supplies are provided. Restore only what a normal full rest restores; no resurrection or additional resources.</p>"
+      },
+      "prereqs": [
+        "U21"
+      ],
+      "condition": {
+        "cs": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "U26",
+      "branch": "utility",
+      "tier": 2,
+      "row": 1,
+      "col": 2,
+      "name": {
+        "cs": "Dílna",
+        "en": "Workshop"
+      },
+      "description": {
+        "cs": "<p>Za Odpočinek na Bezpečném místě vyrobte předem schválený nemagický předmět za běžnou cenu materiálu nebo opravte předmět za polovinu jeho běžné ceny. Žádná magická výroba, výdělečný přeprodej ani rozšíření neseného inventáře. Jeden předmět nebo oprava na protagonistu denně.</p>",
+        "en": "<p>During a rest at a Safe Haven, craft a pre-approved nonmagical item at normal material price or repair one item at half its normal price. No magic crafting, sale-profit loop or carried-slot expansion. One item or repair per protagonist per day.</p>"
+      },
+      "prereqs": [
+        "U21"
+      ],
+      "condition": {
+        "cs": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "U31",
+      "branch": "utility",
+      "tier": 3,
+      "row": 0,
+      "col": 1,
+      "name": {
+        "cs": "Okamžité hýření",
+        "en": "Instant Carousing"
+      },
+      "description": {
+        "cs": "<p>Jedno zvolené hýření studia na Kapitolu může být provedeno za jeden večer, bez ohledu na původně stanovenou dobu hýření.  Běžné zlato, výsledky a XP platí dál. Další hýření využívají Rychlejší hýření.</p>",
+        "en": "<p>Once per chapter, one chosen studio carousing event can be completed in one evening regardless of its originally specified duration. Normal gold costs, outcomes and XP apply. Further carousing uses Faster Carousing.</p>"
+      },
+      "prereqs": [
+        "U22"
+      ],
+      "condition": {
+        "cs": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "U32",
+      "branch": "utility",
+      "tier": 3,
+      "row": 0,
+      "col": 0,
+      "name": {
+        "cs": "Soukromé cechovní sídlo — 30 slotů",
+        "en": "Private Guildhall — 30 slots"
+      },
+      "description": {
+        "cs": "<p>Rozšíření privátních prostor studia o trvalé společenské prostory. Umožňuje propojení nejvýše dvou souhlasících spojeneckých studií. Privátní pokoje zůstávají soukromé; skóre, XP ani limity použití se nesdílejí. Zabezpečná truhla studia se navíc rozšiřuje na 30 slotů místo 20; spojenci si ponechávají vlastní limity skladu.</p>",
+        "en": "<p>Expands the studio's private space with a persistent common area and links up to two consenting allied studios. Private rooms stay private; scores, XP and allowances are not pooled. The studio's secured chest expands from 20 to 30 shared slots; allies retain their own storage limits.</p>"
+      },
+      "prereqs": [
+        "U21"
+      ],
+      "condition": {
+        "cs": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "U33",
+      "branch": "utility",
+      "tier": 3,
+      "row": 0,
+      "col": 2,
+      "name": {
+        "cs": "Výhody ve velkoměstech",
+        "en": "City Benefits"
+      },
+      "description": {
+        "cs": "<p>Při prvním vstupu do velkoměsta můžou autoři určit jeden obchod či místo zájmu v každé čtvrti města. Také se odemkne možnost spravovat velkoměsto a přilehlý region pokud protagonisté ovládnou řízení velkoměsta - zabitím starostů či dobrovolným předáním moci.</p>",
+        "en": "<p>On first entering a city, the Ghostwriters can designate one shop or point of interest in each district. Also unlocks management of the city and surrounding region if the protagonists take control of the city, by killing its mayors or receiving power voluntarily.</p>"
+      },
+      "prereqs": [
+        "U23"
+      ],
+      "condition": {
+        "cs": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "U34",
+      "branch": "utility",
+      "tier": 3,
+      "row": 1,
+      "col": 2,
+      "name": {
+        "cs": "Mistrovská dílna",
+        "en": "Master Workshop"
+      },
+      "description": {
+        "cs": "<p>Dílna zvládne dvě běžné nemagické zakázky za odpočinek pro každého protagonistu. Ceny materiálu jsou poloviční. Umožní výrobu magických předmětů jako jsou lektvary, svitky a podobně.</p>",
+        "en": "<p>The workshop can complete two ordinary nonmagical jobs per rest for each protagonist. Material prices are halved. It also enables crafting magic items such as potions and scrolls.</p>"
+      },
+      "prereqs": [
+        "U32",
+        "U26"
+      ],
+      "condition": {
+        "cs": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "U35",
+      "branch": "utility",
+      "tier": 3,
+      "row": 1,
+      "col": 0,
+      "name": {
+        "cs": "Žoldnéřský cech",
+        "en": "Mercenary Guild"
+      },
+      "description": {
+        "cs": "<p>Možnost přímého najmutí až dvou náhodných pomocníků. Dostupnost se obnoví po každém Odpočinku. Jejich mzda, morálka i limity najímání v kampani zůstávají platné; používají vlastní vybavení a nezdvojují odměny studia ani výhody s omezeným použitím. Nájem prvního žoldnéře ihned po získání cechu je zdarma.</p>",
+        "en": "<p>Enables direct hiring of up to two random hirelings. Availability refreshes after each rest. Wages, morale and campaign hireling limits still apply; they use their own gear and do not duplicate studio awards or limited-use benefits. The first mercenary hired immediately after acquiring the guild is free.</p>"
+      },
+      "prereqs": [
+        "U32"
+      ],
+      "condition": {
+        "cs": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "U36",
+      "branch": "utility",
+      "tier": 3,
+      "row": 1,
+      "col": 1,
+      "name": {
+        "cs": "Velká zkušebna",
+        "en": "Grand Rehearsal Room"
+      },
+      "description": {
+        "cs": "<p>Umožní trénovat a naučit se dva zvolené skilly i v rámci hýření. Naučená schopnost umožní provádět nové akce, získat výhodu na specifické zkoušky, atp. (pravidla p.91). Potřebná zkouška inteligence se sníží na DC 14.</p><p>Jednou za Kapitolu je možné zorganizovat nácvik specifické situace podle známých faktů. Odhalí dva konkrétní problémy při možném provedení. Spojenecké studio se může účastnit bez samostatného použití.</p>",
+        "en": "<p>Enables training and learning two chosen skills during carousing. Learned skills can permit new actions, grant advantage on specific checks, and so on, using the rules on page 91. The required Intelligence check is reduced to DC 14. Once per chapter, organise a rehearsal of a specific situation based on known facts; it reveals two concrete potential problems. An allied studio can participate without a separate use.</p>"
+      },
+      "prereqs": [
+        "U32",
+        "U24"
+      ],
+      "condition": {
+        "cs": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "E11",
+      "branch": "editorial",
+      "tier": 1,
+      "row": 0,
+      "col": 0,
+      "name": {
+        "cs": "Kanál Čtenářů — omezený",
+        "en": "Reader Feed — Restricted"
+      },
+      "description": {
+        "cs": "<p>Při návštěvě Bezpečného místa s novým děním získáte jednu vybranou reakci Čtenářů nebo titulek o soupeřích. Jednou za kapitolu položte publiku jednu otázku pro užitečné vodítko v mezích jeho znalostí a názorové reakce. Čtenáři vědí jen to, co pozorovali; rozlišujte fakta a názory. Základní žebříček je dostupný zdarma.</p>",
+        "en": "<p>When visiting a Safe Haven where there are new developments, receive one curated Reader reaction or rival headline. Once per chapter, ask the audience one question for a useful lead within its knowledge and opinionated reactions. Readers know only what they have observed; distinguish facts from opinions. Basic leaderboard access is free.</p>"
+      },
+      "prereqs": [],
+      "condition": {
+        "cs": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "E12",
+      "branch": "editorial",
+      "tier": 1,
+      "row": 0,
+      "col": 1,
+      "name": {
+        "cs": "Uchování legendárního předmětu",
+        "en": "Legendary Item Retainer"
+      },
+      "description": {
+        "cs": "<p>Na Bezpečném místě může protagonista označit jeden již vlastněný unikátní či magický předmět. Jednou za kapitolu, pokud je předmět zničen nebo nositel zemře, studio tento předmět získá zpět při příští návštěvě Bezpečného místa. Při úmrtí protagonisty je originál odebrán z místa úmrtí okamžitě po odchodu zbytku protagonistů. Označený předmět se po zničení znovu objeví na bezpečném místě; nevytváří se kopie ani se za něj znovu neudělujte XP. Žádné další vybavení se nevrací a protagonista zůstává mrtvý.</p>",
+        "en": "<p>At a Safe Haven, a protagonist may designate one already-owned unique or magic item. Once per chapter, if the item is destroyed or its bearer dies, the studio recovers it at its next visit to a Safe Haven. After a protagonist's death, remove the original from the death site immediately after the remaining protagonists leave. A destroyed designated item reappears at a Safe Haven; no copy is created and no XP is awarded again. No other equipment returns and the protagonist remains dead.</p>"
+      },
+      "prereqs": [],
+      "condition": {
+        "cs": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "E13",
+      "branch": "editorial",
+      "tier": 1,
+      "row": 0,
+      "col": 2,
+      "name": {
+        "cs": "Úprava postavy — nový hod",
+        "en": "Respec — Reroll"
+      },
+      "description": {
+        "cs": "<p>Jednou za kapitolu si může každý autor zrevidovat svého protagonistu - znovu naházet rasu, povolání, vlastnosti či získané talenty. Nový výsledek nahradí původní, i když je horší; stejný výsledek platí. Zachovejte úroveň, XP, i vybavení.</p>",
+        "en": "<p>Once per chapter, each Ghostwriter may revise their protagonist by rerolling ancestry, class, ability scores or acquired talents. The new result replaces the original even if worse; identical results stand. Retain level, XP and equipment.</p>"
+      },
+      "prereqs": [],
+      "condition": {
+        "cs": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "E21",
+      "branch": "editorial",
+      "tier": 2,
+      "row": 1,
+      "col": 0,
+      "name": {
+        "cs": "PR manažer",
+        "en": "PR Manager"
+      },
+      "description": {
+        "cs": "<p>Stálý osobní poradce a kouč pro autorské studio a jednotlivé protagonistu. Může pomoci řešit známá rizika, plánování, pomáhat s přípravou, zpřístupnit kontakty či vysvětlit smluvní omezení. Je postavou s vlastními motivy, nikoli automatickou odpovědní službou a jeho míra spolupráce záleží na vzájemném vztahu. Manažer může být zraněn a pokud zemře tak je po zbytek kapitoly nedostupný, manažer se zregeneruje na začátku další kapitoly. <br>Po zpřístupnění sponzorů od třetí kapitoly také vyhodnocuje, vyjednává a reprezentuje autorské studio a vybrané nabídky spolupráce. Možnost jak si zachovat začátečnického poradce i po vstupu do třetí kapitoly.</p>",
+        "en": "<p>A dedicated personal adviser and coach for the Ghostwriters' Studio and individual protagonists. The manager can help with known risks, planning, preparation, contacts and contractual restrictions. They have their own motives and are not an automatic answer service; their cooperation depends on the relationship. The manager can be injured; if they die, they are unavailable for the rest of the chapter and regenerate at the start of the next. From Chapter 3, after sponsors become available, they also evaluate and negotiate selected partnership offers and represent the studio. This upgrade can preserve the beginners' adviser after entering Chapter 3.</p>"
+      },
+      "prereqs": [],
+      "condition": {
+        "cs": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "E22",
+      "branch": "editorial",
+      "tier": 2,
+      "row": 0,
+      "col": 1,
+      "name": {
+        "cs": "Nedokončené záležitosti",
+        "en": "Unfinished Business"
+      },
+      "description": {
+        "cs": "<p>Jednou za kapitolu může smrt protagonisty spustit úkol vedoucí k jeho vzkříšení, pokud alespoň jeden další protagonista přežil. Konkrétní cesta, cena a výsledek dokončení je negarantován a vyhodnocen podle okolností. Správné splnění obnoví úroveň a XP v okamžiku smrti, nikoli kopie vybavení; čas kapitoly běží dál. Během úkolu hraje autor náhradního protagonistu. XP náhradní postavy se nepřenášejí. Žádné okamžité ani zaručené vzkříšení; úplné vyhlazení družiny úkol nespouští.</p>",
+        "en": "<p>Once per chapter, a protagonist's death can trigger a quest to resurrect them if at least one other protagonist survives. The route, cost and outcome are not guaranteed and are determined by the circumstances. Successful completion restores the protagonist's level and XP at death, not copies of equipment; chapter time continues. The Ghostwriter plays a replacement protagonist during the quest. The replacement's XP does not transfer. No instant or guaranteed resurrection; a TPK does not trigger the quest.</p>"
+      },
+      "prereqs": [],
+      "condition": {
+        "cs": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "E23",
+      "branch": "editorial",
+      "tier": 2,
+      "row": 0,
+      "col": 0,
+      "name": {
+        "cs": "Kanál Čtenářů — cenzurovaný",
+        "en": "Reader Feed — Censored"
+      },
+      "description": {
+        "cs": "<p>Místo vybraných úryvků máte k dispozici celé veřejné diskuse Čtenářů, zprávy o soupeřích a postoje frakcí s uvedenými zdroji. Jednou za kapitolu určete jednu známou frakci Čtenářů se zájmem o studio a to, co ji přitahuje nebo odrazuje. Limit přímých otázek publiku se zvyšuje na dvě za Kapitolu; chráněný obsah je nadále cenzurovaný.</p>",
+        "en": "<p>Instead of selected snippets, access complete public Reader discussions, rival reports and faction positions with their sources identified. Once per chapter, identify one established Reader faction interested in the studio and what attracts or alienates it. The allowance for direct audience questions increases to two per chapter; protected content remains censored.</p>"
+      },
+      "prereqs": [
+        "E11"
+      ],
+      "condition": {
+        "cs": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "E24",
+      "branch": "editorial",
+      "tier": 2,
+      "row": 0,
+      "col": 2,
+      "name": {
+        "cs": "Úprava postavy — na míru",
+        "en": "Respec — Customised"
+      },
+      "description": {
+        "cs": "<p>Jednou za kapitolu může autor zrevidovat svého protagonistu podle svých představ - vybrat novou rasu, či povolání, přehodit jednu vlastnost či talent a nebo přerozdělit svých stávajících šest hodnot vlastností; Odvozené statistiky se přepočítají; pravidla tvorby postav musí být zachována.</p>",
+        "en": "<p>Once per chapter, a Ghostwriter may revise their protagonist to their preference: choose a new ancestry or class, reroll one ability score or talent, or redistribute the existing six ability scores. Recalculate derived statistics and follow character creation rules.</p>"
+      },
+      "prereqs": [
+        "E13"
+      ],
+      "condition": {
+        "cs": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "E31",
+      "branch": "editorial",
+      "tier": 3,
+      "row": 0,
+      "col": 0,
+      "name": {
+        "cs": "Odměna za příběhový oblouk",
+        "en": "Story Arc Reward"
+      },
+      "description": {
+        "cs": "<p>Jednou za kapitolu přesně určete jednu plánovanou odměnu za úkol nebo sponzorskou zásilku u oznámeného budoucího cíle. Vyberte kategorii předmětu a vlastnosti (nutnost konzultace s PJem). Doručení vyžaduje dosažení cíle; žádné nouzové dodání. Pokud PJ příležitost odstraní, použití se vrátí; opuštění cíle hráči jej nevrací. PR manažer může dále vylepšit tentýž balíček a finální odměnu.</p>",
+        "en": "<p>Once per chapter, precisely specify one planned quest reward or sponsor delivery at an announced future objective. Choose the item category and properties in consultation with the GM. Delivery requires reaching the objective; no emergency delivery. If the GM removes the opportunity, restore the use; abandoning it does not. The PR Manager can further improve the same package and final reward.</p>"
+      },
+      "prereqs": [],
+      "condition": {
+        "cs": "alespoň jeden sponzor",
+        "en": "At least one sponsor"
+      }
+    },
+    {
+      "id": "E32",
+      "branch": "editorial",
+      "tier": 3,
+      "row": 0,
+      "col": 1,
+      "name": {
+        "cs": "Obnovení smlouvy",
+        "en": "Contract Renewal"
+      },
+      "description": {
+        "cs": "<p>Umožní jednou za kampaň zachovat autorské studio i po úplném vyhlazení družiny (TPK). <br>Pokračujte s novými protagonisty na podobném levelu a ve stejné kapitole. Původní protagonisté zůstávají mrtví, vybavení pravděpodobně ztracené, cíle mohou selhat a čas běží dál. Při nákupu zapište proveditelný vstup nových protagonistů do děje.</p>",
+        "en": "<p>Once per campaign, preserve the Ghostwriters' Studio after a total party kill. Continue with new protagonists at a similar level and in the same chapter. The original protagonists remain dead, equipment is probably lost, objectives can fail and time passes. Record a viable entry point for the new protagonists when purchasing the upgrade.</p>"
+      },
+      "prereqs": [],
+      "condition": {
+        "cs": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "E33",
+      "branch": "editorial",
+      "tier": 3,
+      "row": 1,
+      "col": 0,
+      "name": {
+        "cs": "Kanál Čtenářů — necenzurovaný",
+        "en": "Reader Feed — Uncensored"
+      },
+      "description": {
+        "cs": "<p>Odstraňuje redakční cenzuru ze zpráv Čtenářů, které je studio oprávněno dostávat. Jednou za kapitolu si vyžádejte souvislosti týkající se sponzorů nebo soupeřů pro nadcházející veřejné rozhodnutí, včetně známých tlaků či střetů zájmů. Limit otázek publiku se zvýší na 3. Žádný přístup k nepozorovaným událostem, neobjeveným chráněným tajemstvím ani soukromým kanálům jiných studií.</p>",
+        "en": "<p>Remove editorial censorship from Reader reports the studio is authorised to receive. Once per chapter, request sponsor or rival context for an upcoming public choice, including known pressure or conflicts of interest. The audience-question allowance increases to three. No access to unobserved events, undiscovered protected secrets or other studios' private channels.</p>"
+      },
+      "prereqs": [
+        "E23"
+      ],
+      "condition": {
+        "cs": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "E34",
+      "branch": "editorial",
+      "tier": 3,
+      "row": 1,
+      "col": 1,
+      "name": {
+        "cs": "Právo na hlavní téma",
+        "en": "Headline Rights"
+      },
+      "description": {
+        "cs": "<p>Jednou za kapitolu zvolte již představeného soupeře, patrona nebo veřejný spor jako téma plánovaného rozhovoru. Získejte odpovědi nebo výslovné vodítko, kontakt či jinou výpomoc dle vašich zájmů.</p>",
+        "en": "<p>Once per chapter, choose an introduced rival, patron or public controversy as the subject of a scheduled interview. Receive answers, an explicit lead, a contact or other help according to the Ghostwriters' interests.</p>"
+      },
+      "prereqs": [],
+      "condition": {
+        "cs": "",
+        "en": ""
+      }
+    }
+  ]
+}

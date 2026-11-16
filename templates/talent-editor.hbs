@@ -1,0 +1,83 @@
+<div class="sds-editor">
+<div class="sds-editor-body">
+  <div class="sds-editor-grid">
+    <div class="form-group">
+      <label>{{L.Edit.Id}}</label>
+      <input type="text" name="id" value="{{talent.id}}" required pattern="[\w\-]+">
+    </div>
+    <div class="form-group">
+      <label>{{L.Edit.BranchField}}</label>
+      <select name="branch">
+        {{#each branches}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}}</option>{{/each}}
+      </select>
+    </div>
+    <div class="form-group">
+      <label>{{L.Edit.TierField}}</label>
+      <select name="tier">
+        {{#each tiers}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}
+      </select>
+    </div>
+    <div class="form-group">
+      <label>{{L.Edit.Position}}</label>
+      <div class="form-fields">
+        <input type="number" name="row" min="0" step="1" value="{{talent.row}}" data-tooltip="{{L.Edit.Row}}">
+        <input type="number" name="col" min="0" step="1" value="{{talent.col}}" data-tooltip="{{L.Edit.Col}}">
+      </div>
+    </div>
+  </div>
+
+  <div class="sds-editor-lang">
+    <fieldset>
+      <legend>Čeština</legend>
+      <div class="form-group">
+        <label>{{L.Edit.Name}}</label>
+        <input type="text" name="name.cs" value="{{talent.name.cs}}">
+      </div>
+      <div class="form-group">
+        <label>{{L.Edit.Condition}}</label>
+        <input type="text" name="condition.cs" value="{{talent.condition.cs}}" placeholder="{{L.Edit.ConditionHint}}">
+      </div>
+      <div class="form-group stacked">
+        <label>{{L.Edit.Description}}</label>
+        <div data-prose-name="description.cs" data-height="240"></div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>English</legend>
+      <div class="form-group">
+        <label>{{L.Edit.Name}}</label>
+        <input type="text" name="name.en" value="{{talent.name.en}}">
+      </div>
+      <div class="form-group">
+        <label>{{L.Edit.Condition}}</label>
+        <input type="text" name="condition.en" value="{{talent.condition.en}}" placeholder="{{L.Edit.ConditionHint}}">
+      </div>
+      <div class="form-group stacked">
+        <label>{{L.Edit.Description}}</label>
+        <div data-prose-name="description.en" data-height="240"></div>
+      </div>
+    </fieldset>
+  </div>
+
+  <fieldset class="sds-prereqs">
+    <legend>{{L.Edit.Prereqs}}</legend>
+    <p class="hint">{{L.Edit.PrereqHint}}</p>
+    {{#each groups}}
+    <div class="sds-prereq-group" style="--branch-color: {{color}};">
+      <h4>{{name}}</h4>
+      {{#each options}}
+      <label class="checkbox">
+        <input type="checkbox" name="prereq.{{id}}" {{#if checked}}checked{{/if}}>
+        <span class="tier">{{tier}}</span> {{name}} <span class="id">{{id}}</span>
+      </label>
+      {{/each}}
+    </div>
+    {{/each}}
+  </fieldset>
+</div>
+
+<footer class="form-footer">
+  <button type="submit"><i class="fa-solid fa-floppy-disk"></i> {{L.Action.Save}}</button>
+  <button type="button" data-action="cancel"><i class="fa-solid fa-xmark"></i> {{L.Action.Cancel}}</button>
+</footer>
+</div>

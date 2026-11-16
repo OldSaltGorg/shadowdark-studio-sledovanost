@@ -1,0 +1,130 @@
+{
+  "SDSTUDIO": {
+    "Title": "Ghostwriters' Studio — Upgrades",
+    "Control": "Studio Upgrades",
+    "Settings": {
+      "Language": {
+        "Name": "Studio tree language",
+        "Hint": "Language of the studio upgrade tree on this device. Can also be switched in the window itself.",
+        "Auto": "Follow Foundry language"
+      }
+    },
+    "Header": {
+      "Popularity": "Popularity",
+      "NextMilestone": "Next milestone at {score} (+{sp} SP)",
+      "Earned": "SP earned",
+      "Milestones": "milestones",
+      "Spent": "SP spent",
+      "Owned": "owned",
+      "Available": "SP available",
+      "Adjustment": "SP adjustment",
+      "AdjustmentHint": "GM correction added to earned SP (may be negative)."
+    },
+    "Tier": {
+      "Name": "Tier",
+      "Cost": "{cost} SP",
+      "Unlocked": "Unlocked",
+      "Locked": "Locked ({need} spent)"
+    },
+    "Status": {
+      "purchased": "Owned",
+      "available": "Available",
+      "unaffordable": "Not enough SP",
+      "locked": "Locked"
+    },
+    "Reason": {
+      "Tier": "Tier opens after {need} SP spent on upgrades (spent so far: {spent}).",
+      "Prereq": "Requires: {names}.",
+      "SP": "Costs {need} SP; {available} available.",
+      "NoTier": "This upgrade's tier no longer exists."
+    },
+    "Detail": {
+      "Overview": "Studio overview",
+      "SelectHint": "Select an upgrade to read its full effect. Arrows show prerequisites.",
+      "Tiers": "Tiers",
+      "OpensAfter": "opens after SP spent:",
+      "Owned": "Owned upgrades",
+      "NoneOwned": "No upgrades purchased yet.",
+      "Prerequisites": "Prerequisites",
+      "Unlocks": "Leads to",
+      "Condition": "Extra condition",
+      "PurchasedOn": "Purchased",
+      "Orphans": "Upgrades without a valid branch or tier:"
+    },
+    "Action": {
+      "EditMode": "Edit tree",
+      "Purchase": "Purchase",
+      "Grant": "Grant anyway",
+      "Refund": "Refund",
+      "Edit": "Edit",
+      "Delete": "Delete",
+      "Save": "Save",
+      "Cancel": "Cancel",
+      "AddTalent": "Add upgrade here",
+      "AddBranch": "Add branch",
+      "AddTier": "Add tier",
+      "EditIntro": "Edit overview text",
+      "MoveLeft": "Move left",
+      "MoveRight": "Move right",
+      "Export": "Export",
+      "Import": "Import",
+      "Reset": "Reset to default"
+    },
+    "Confirm": {
+      "Purchase": "Purchase <strong>{name}</strong> for {cost} SP? The whole group should have agreed at the contract review.",
+      "Grant": "Grant <strong>{name}</strong> for {cost} SP even though its requirements are not met?",
+      "NegativeSP": "This will leave the studio with negative SP.",
+      "Refund": "Refund <strong>{name}</strong> and return {cost} SP? Use this only to correct mistakes.",
+      "RefundDependents": "These owned upgrades depend on it: {names}.",
+      "DeleteTalent": "Delete the upgrade <strong>{name}</strong>? It is also removed from other upgrades' prerequisites.",
+      "DeleteBranch": "Delete this empty branch?",
+      "Reset": "Replace the whole tree with the bundled default? Purchases are kept; export first if you want a backup."
+    },
+    "Notify": {
+      "CannotPurchase": "This upgrade cannot be purchased right now.",
+      "RefundBeforeDelete": "Refund this upgrade before deleting it.",
+      "BranchNotEmpty": "Move or delete this branch's upgrades first.",
+      "Imported": "Studio tree imported.",
+      "ImportFailed": "Import failed: the file is not a valid studio tree export.",
+      "InvalidId": "IDs may only contain letters, numbers, - and _.",
+      "DuplicateId": "The ID {id} is already used.",
+      "Cycle": "Those prerequisites would create a circular dependency.",
+      "NameRequired": "Enter a name in at least one language."
+    },
+    "Import": {
+      "File": "Export file",
+      "IncludeState": "Also restore popularity and purchases",
+      "Hint": "Replaces the current tree with the one from the file."
+    },
+    "Edit": {
+      "Help": "Drag upgrades to move or swap them; click + to add one; click a tier or branch pencil to edit it.",
+      "Talent": "Edit upgrade {id}",
+      "NewTalent": "New upgrade",
+      "Id": "ID",
+      "BranchField": "Branch",
+      "TierField": "Tier",
+      "Position": "Row / column in cell",
+      "Row": "Row within the tier (0 = top)",
+      "Col": "Column within the branch (0 = left)",
+      "Name": "Name",
+      "Condition": "Extra condition",
+      "ConditionHint": "Optional, e.g. at least one sponsor",
+      "Description": "Effect",
+      "Prereqs": "Prerequisites",
+      "PrereqHint": "All ticked upgrades must be owned first. Tier thresholds apply separately.",
+      "Branch": "Edit branch",
+      "NameCs": "Name (Czech)",
+      "NameEn": "Name (English)",
+      "Prefix": "ID prefix",
+      "Color": "Colour",
+      "DescriptionCs": "Description (Czech)",
+      "DescriptionEn": "Description (English)",
+      "Tier": "Edit tier",
+      "TierLabel": "Label",
+      "TierCost": "Cost per upgrade (SP)",
+      "TierUnlock": "Opens after SP spent",
+      "TierHint": "Cost changes apply to future purchases; past purchases keep the price paid.",
+      "Intro": "Overview text"
+    }
+  }
+}

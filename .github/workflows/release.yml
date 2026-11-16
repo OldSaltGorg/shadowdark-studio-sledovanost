@@ -1,0 +1,41 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Test
+        run: node --test tests/*.test.mjs
+
+      - name: Check tag matches module.json version
+        run: |
+          tag="${GITHUB_REF_NAME#v}"
+          version="$(jq -r .version module.json)"
+          if [ "$tag" != "$version" ]; then
+            echo "Tag $GITHUB_REF_NAME does not match module.json version $version" >&2
+            exit 1
+          fi
+
+      - name: Build
+        run: python3 tools/build.py
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/module.json
+            dist/module.zip
+          generate_release_notes: true
