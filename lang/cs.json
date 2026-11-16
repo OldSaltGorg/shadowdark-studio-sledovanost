@@ -1,6 +1,6 @@
 {
   "SDSTUDIO": {
-    "Title": "Autorské studio — Vylepšení",
+    "Title": "Autorské studio — Popularita",
     "Control": "Vylepšení studia",
     "Settings": {
       "Language": {
@@ -10,7 +10,7 @@
       }
     },
     "Header": {
-      "Popularity": "Sledovanost",
+      "Popularity": "Popularita",
       "NextMilestone": "Další milník při {score} (+{sp} SP)",
       "Earned": "Získané SP",
       "Milestones": "milníků",
@@ -18,7 +18,9 @@
       "Owned": "vlastněno",
       "Available": "Dostupné SP",
       "Adjustment": "Úprava SP",
-      "AdjustmentHint": "Oprava PJ přičtená k získaným SP (může být záporná)."
+      "AdjustmentHint": "Oprava PJ přičtená k získaným SP (může být záporná).",
+      "Milestone": "Milník",
+      "PopularityHint": "Ruční oprava. Odměny dne se sem přičítají automaticky."
     },
     "Tier": {
       "Name": "Stupeň",
@@ -89,11 +91,12 @@
       "InvalidId": "ID smí obsahovat jen písmena, čísla, - a _.",
       "DuplicateId": "ID {id} už je použité.",
       "Cycle": "Tyto podmínky by vytvořily kruhovou závislost.",
-      "NameRequired": "Zadejte název alespoň v jednom jazyce."
+      "NameRequired": "Zadejte název alespoň v jednom jazyce.",
+      "NoStudio": "Na žebříčku není žádné hráčské studio. Označte studio jako hráčské v záložce Žebříček.",
+      "ManualCorrection": "Ruční oprava"
     },
     "Import": {
       "File": "Soubor exportu",
-      "IncludeState": "Obnovit i Sledovanost a nákupy",
       "Hint": "Nahradí současný strom stromem ze souboru."
     },
     "Edit": {
@@ -125,6 +128,86 @@
       "TierUnlock": "Otevře se po utracení SP",
       "TierHint": "Změna ceny platí pro budoucí nákupy; dřívější nákupy si ponechají zaplacenou cenu.",
       "Intro": "Text přehledu"
+    },
+    "Tabs": {
+      "rewards": "Odměny dne",
+      "tree": "Vylepšení",
+      "board": "Žebříček"
+    },
+    "Rewards": {
+      "Calendar": "Kapitola {chapter} · vyhodnoceno dní: {day}",
+      "DateDay": "Kapitola {chapter}, den {day}",
+      "DateInterview": "Kapitola {chapter}, rozhovor",
+      "DateManual": "Kapitola {chapter}, ruční záznam",
+      "Rubric": {
+        "0": "Běžná činnost, žádný podstatný důsledek nebo opakování bez nových sázek.",
+        "1": "Příprava, objev, podpora, vyjednávání, únik, rozhodnutí postavy nebo kritický hod, který měl podstatný důsledek.",
+        "2": "Zásadní řešení, zvrat nebo rozhodnutí spojené se skutečnou obětí. Počítá se i neúspěch."
+      },
+      "RubricTitle": "Body",
+      "Limits": "Jeden nejlepší moment na autora a den (max 2). Nová rekordní úroveň přidává +1 za úroveň mimo tento limit. Za společný cíl není bonus.",
+      "GuideTitle": "Jak na to",
+      "Guide": {
+        "1": "Každý navrhne přínos jiného autora, nikdy svůj vlastní.",
+        "2": "Hledejte jediný nejlepší moment dne: přípravu, objev, podporu, vyjednávání, únik, rozhodnutí postavy nebo skutečný zvrat.",
+        "3": "Tiché plánování a podpora mají stejnou váhu jako výrazné vystoupení. Počítá se i neúspěch se skutečnými sázkami.",
+        "4": "Návrhy jsou uznání, ne hlasování: víc návrhů neznamená víc bodů.",
+        "5": "Nepočítá se: běžná činnost, opakování bez nových sázek, záměrné nehody, hromadění hodů."
+      },
+      "PromptsTitle": "Zmiňte to",
+      "Prompts": {
+        "1": "Kdo dnes zachránil situaci, aniž by si toho kdo všiml?",
+        "2": "Které rozhodnutí mělo skutečnou cenu?",
+        "3": "O čem budou Čtenáři dnes večer mluvit?",
+        "4": "Čí příprava umožnila velký moment někoho jiného?"
+      },
+      "InterviewNote": "Rozhovor: odměňujte nové odhalení, závazek nebo reakci s důsledky, ne převyprávění již odměněných úspěchů.",
+      "KindDay": "Konec dne",
+      "KindInterview": "Rozhovor kapitoly",
+      "Chapter": "Kapitola",
+      "DaysDone": "Vyhodnocené dny",
+      "Participants": "Zúčastnění autoři",
+      "NoCharacter": "Bez přiřazené postavy",
+      "Offline": "offline",
+      "Level": "Úroveň",
+      "Record": "Rekord",
+      "Start": "Zamíchat a začít",
+      "Waiting": "Čeká se, až PJ zahájí vyhodnocení…",
+      "Authors": "Záznamy autorů",
+      "Author": "Autor",
+      "Protagonist": "Protagonista",
+      "Lifetime": "Celkem",
+      "NoAuthors": "Zatím žádné zapsané odměny.",
+      "Recent": "Poslední dny",
+      "NoRecent": "Zatím nic vyhodnoceno.",
+      "Reshuffle": "Znovu zamíchat",
+      "Summary": "Souhrn",
+      "Cancel": "Zrušit vyhodnocení",
+      "CancelConfirm": "Zahodit toto vyhodnocení? Zatím nic nebylo zapsáno.",
+      "Position": "{n} z {total}",
+      "Prompt": "Co dnes {name} udělal/a, na čem záleželo? Ostatní: jmenujte jeho/její nejlepší moment.",
+      "PromptInterview": "Co {name} v rozhovoru odhalil/a, slíbil/a nebo odpověděl/a s důsledky?",
+      "NewRecord": "Nová rekordní úroveň! +{n} Popularity",
+      "LevelBonus": "Bonus za rekordní úroveň",
+      "NotePlaceholder": "Moment (do deníku)…",
+      "Prev": "Zpět",
+      "Next": "Potvrdit a další",
+      "ToSummary": "Potvrdit a shrnout",
+      "PickPoints": "Nejdřív zvolte 0, 1 nebo 2 body.",
+      "Highlight": "Moment",
+      "Note": "Popis",
+      "Total": "Celkem",
+      "DayTotal": "Celkem za den",
+      "Commit": "Zapsat",
+      "CommitHint": "Zápis přičte body k Popularitě, aktualizuje záznamy autorů a vyhodnotí konkurenční studia pro stejné datum.",
+      "CommitConfirm": "Přičíst <strong>{total}</strong> Popularity za {label} a vyhodnotit soupeře?",
+      "PendingWarning": "{n} autor(ů) nemá zvolené body; dostanou 0.",
+      "Committed": "Zapsáno +{total} Popularity za {label}.",
+      "WaitingCommit": "PJ kontroluje součty.",
+      "AutoStudio": "Automaticky: nejvýše postavené hráčské studio ({name})",
+      "StudioHint": "Které hráčské studio právě hraje. Platí pro všechny záložky a všechny hráče.",
+      "FinishFirst": "Nejdřív dokončete nebo zrušte probíhající vyhodnocení.",
+      "NoStudio": "Na žebříčku zatím není hráčské studio. Označte ho v záložce Žebříček."
     }
   }
 }

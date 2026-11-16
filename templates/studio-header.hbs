@@ -1,0 +1,33 @@
+<header class="sds-header">
+  <div class="sds-xp">
+    <div class="sds-xp-top">
+      <span class="sds-xp-title">{{#if studio.many}}{{studio.name}} · {{/if}}{{L.Header.Popularity}}</span>
+      <span class="sds-xp-score">{{progress.popularity}}</span>
+      <span class="sds-xp-milestone">{{L.Header.Milestone}} {{progress.milestones}}</span>
+      <span class="sds-xp-next">{{progress.nextMilestoneText}}</span>
+    </div>
+    <div class="sds-xp-bar" data-tooltip="{{progress.toGo}} → {{progress.nextMilestone}}">
+      <div class="sds-xp-fill" style="width: {{progress.toNext}}%"></div>
+      <span class="sds-xp-from">{{progress.prevMilestone}}</span>
+      <span class="sds-xp-to">{{progress.nextMilestone}}</span>
+    </div>
+  </div>
+  <div class="sds-sp">
+    <div><label>{{L.Header.Earned}}</label><span>{{progress.earned}}</span></div>
+    <div><label>{{L.Header.Spent}}</label><span>{{progress.spent}}</span></div>
+    <div class="sds-available {{#if progress.availableNegative}}negative{{/if}}"><label>{{L.Header.Available}}</label><span>{{progress.available}}</span></div>
+  </div>
+  <div class="sds-header-right">
+    <span class="sds-calendar"><i class="fa-solid fa-calendar-day"></i> {{calendarLabel}}</span>
+    <div class="sds-lang" role="group">
+      {{#each langs}}
+      <button type="button" data-action="setLanguage" data-lang="{{id}}" class="{{#if active}}active{{/if}}">{{label}}</button>
+      {{/each}}
+    </div>
+  </div>
+  <nav class="sds-tabs">
+    {{#each tabs}}
+    <button type="button" data-action="tab" data-tab="{{id}}" class="{{#if active}}active{{/if}}"><i class="{{icon}}"></i> {{label}}</button>
+    {{/each}}
+  </nav>
+</header>

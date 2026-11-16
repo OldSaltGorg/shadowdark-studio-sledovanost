@@ -442,8 +442,8 @@
         "en": "Faster Carousing"
       },
       "description": {
-        "cs": "<p>Běžná herní doba hýření se půlí, zaokrouhlená nahoru na běžnou jednotku sledování času, nejméně jednu noc. Zlato, hody, rizika i XP zůstávají stejné. Žádná dodatečná vyhodnocení Sledovanosti.</p>",
-        "en": "<p>Halve normal in-world carousing duration, rounded up to the normal tracking increment, minimum one night. Gold, rolls, risks and XP are unchanged. No extra Sledovanost settlements.</p>"
+        "cs": "<p>Běžná herní doba hýření se půlí, zaokrouhlená nahoru na běžnou jednotku sledování času, nejméně jednu noc. Zlato, hody, rizika i XP zůstávají stejné. Žádná dodatečná vyhodnocení Popularity.</p>",
+        "en": "<p>Halve normal in-world carousing duration, rounded up to the normal tracking increment, minimum one night. Gold, rolls, risks and XP are unchanged. No extra Popularity settlements.</p>"
       },
       "prereqs": [],
       "condition": {

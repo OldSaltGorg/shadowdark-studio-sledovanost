@@ -49,7 +49,7 @@ async function loadTemplate(path) {
 }
 
 function getRoute(path) {
-  return "/" + path.replace(MODULE_PREFIX, "");
+  return `${globalThis.HARNESS_PREFIX ?? ""}/${path.replace(MODULE_PREFIX, "")}`;
 }
 
 class ApplicationV2 {
@@ -229,9 +229,29 @@ globalThis.foundry = {
 };
 
 const isGM = params.get("gm") !== "0";
+
+function avatar(text, hue) {
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120"><rect width="120" height="120" fill="hsl(${hue},45%,30%)"/>`
+    + `<text x="60" y="74" font-size="44" text-anchor="middle" fill="#fff" font-family="sans-serif">${text}</text></svg>`;
+  return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
+}
+// Harness players: level overrides via ?lv=Glatnig:4 to test record-level bonuses.
+const levelOverrides = Object.fromEntries((params.get("lv") ?? "").split(",").filter(Boolean).map(x => x.split(":")));
+const players = [
+  ["u1", "Petr", "Glatnig", 3, true], ["u2", "Jana", "Mubgnat", 3, true], ["u3", "Tomáš", "Murloc", 3, true],
+  ["u4", "Eva", "Thrur", 3, true], ["u5", "Ondra", "Melg", 3, true], ["u6", "Host", null, null, false]
+].map(([id, name, char, level, active], i) => ({
+  id, name, isGM: false, active, avatar: avatar(name[0], i * 60), color: { css: `hsl(${i * 60},60%,55%)` },
+  character: char ? { id: `a-${id}`, name: char, img: avatar(char.slice(0, 2), i * 60 + 20),
+    system: { level: { value: Number(levelOverrides[char] ?? level) } } } : null
+}));
+const gmUser = { id: "gm", name: "PJ", isGM: true, active: true };
+const users = [gmUser, ...players];
+users.activeGM = { isSelf: isGM };
+
 globalThis.game = {
-  user: { isGM },
-  users: { activeGM: { isSelf: isGM } },
+  user: isGM ? gmUser : players[0],
+  users,
   i18n: { lang: params.get("lang") ?? "cs", localize: k => k },
   settings,
   modules: new Map([["shadowdark-studio-sledovanost", {}]])

@@ -1,0 +1,197 @@
+{{#if (eq activeTab "rewards")}}
+<section class="sds-tab sds-tab-rewards" data-tab="rewards">
+  <div class="sds-rw-main">
+    {{#if rw.session}}
+    <div class="sds-rw-title">
+      <h2>{{rw.session.label}}</h2>
+      <span class="sds-rw-total">{{L.Rewards.DayTotal}}: <strong>{{rw.session.totals.total}}</strong></span>
+      {{#if isGM}}
+      <div class="sds-rw-gm">
+        {{#if (eq rw.session.phase "focus")}}<button type="button" data-action="rwShuffle"><i class="fa-solid fa-shuffle"></i> {{L.Rewards.Reshuffle}}</button>{{/if}}
+        <button type="button" data-action="rwSummary"><i class="fa-solid fa-list-check"></i> {{L.Rewards.Summary}}</button>
+        <button type="button" class="danger" data-action="rwCancel"><i class="fa-solid fa-xmark"></i> {{L.Rewards.Cancel}}</button>
+      </div>
+      {{/if}}
+    </div>
+
+    <ol class="sds-order">
+      {{#each rw.session.order}}
+      <li class="{{#if current}}current{{/if}} {{#if done}}done{{/if}}">
+        <a {{#if @root.isGM}}data-action="rwFocus" data-index="{{index}}"{{/if}}>
+          <span class="who">{{protagonist}}</span>
+          <span class="badge">{{#if done}}+{{total}}{{else}}…{{/if}}</span>
+        </a>
+      </li>
+      {{/each}}
+    </ol>
+
+    {{#if rw.focus}}
+    <div class="sds-focus">
+      <img class="portrait" src="{{rw.focus.img}}" alt="">
+      <div class="sds-focus-body">
+        <span class="sds-focus-pos">{{rw.focus.position}}</span>
+        <h2>{{rw.focus.name}}</h2>
+        <span class="sds-focus-author"><i class="fa-solid fa-user"></i> {{rw.focus.author}}
+          {{#if rw.focus.levelKnown}} · {{L.Rewards.Level}} {{rw.focus.level}} · {{L.Rewards.Record}} {{rw.focus.record}}{{/if}}</span>
+        {{#if rw.focus.newRecord}}
+        <div class="sds-record-banner"><i class="fa-solid fa-arrow-trend-up"></i> {{rw.focus.recordText}}</div>
+        {{/if}}
+        <p class="sds-focus-prompt">{{rw.focus.prompt}}</p>
+
+        <div class="sds-points">
+          {{#each rw.focus.options}}
+          <button type="button" class="pts pts-{{points}} {{#if selected}}selected{{/if}}" {{#if @root.isGM}}data-action="rwPoints" data-points="{{points}}"{{else}}disabled{{/if}}>
+            <span class="n">{{points}}</span><span class="txt">{{text}}</span>
+          </button>
+          {{/each}}
+        </div>
+
+        <div class="sds-focus-extra">
+          <div class="sds-level-bonus">
+            <span>{{L.Rewards.LevelBonus}}</span>
+            {{#if isGM}}<a data-action="rwLevel" data-delta="-1"><i class="fa-solid fa-minus"></i></a>{{/if}}
+            <strong>+{{rw.focus.levelBonus}}</strong>
+            {{#if isGM}}<a data-action="rwLevel" data-delta="1"><i class="fa-solid fa-plus"></i></a>{{/if}}
+          </div>
+          {{#if isGM}}
+          <input type="text" class="sds-note" placeholder="{{L.Rewards.NotePlaceholder}}" value="{{rw.focus.note}}" data-rw-field="note" data-user="{{rw.focus.userId}}">
+          {{else if rw.focus.note}}
+          <span class="sds-note-view">“{{rw.focus.note}}”</span>
+          {{/if}}
+        </div>
+
+        {{#if isGM}}
+        <div class="sds-focus-nav">
+          <button type="button" data-action="rwPrev" {{#if rw.session.isFirst}}disabled{{/if}}><i class="fa-solid fa-chevron-left"></i> {{L.Rewards.Prev}}</button>
+          <button type="button" class="primary" data-action="rwNext">
+            {{#if rw.session.isLast}}{{L.Rewards.ToSummary}}{{else}}{{L.Rewards.Next}}{{/if}} <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+        {{/if}}
+      </div>
+    </div>
+    {{/if}}
+
+    {{#if rw.summary}}
+    <div class="sds-summary">
+      <h3>{{L.Rewards.Summary}}</h3>
+      <table>
+        <thead><tr><th>{{L.Rewards.Protagonist}}</th><th>{{L.Rewards.Highlight}}</th><th>{{L.Rewards.LevelBonus}}</th><th>{{L.Rewards.Note}}</th><th>{{L.Rewards.Total}}</th></tr></thead>
+        <tbody>
+          {{#each rw.summary}}
+          <tr>
+            <td><strong>{{protagonist}}</strong><br><span class="hint">{{author}}</span></td>
+            <td>
+              {{#if @root.isGM}}
+              <select data-rw-field="highlight" data-user="{{userId}}">{{#each options}}<option value="{{n}}" {{#if selected}}selected{{/if}}>{{n}}</option>{{/each}}</select>
+              {{else}}{{highlight}}{{/if}}
+            </td>
+            <td>
+              {{#if @root.isGM}}<input type="number" min="0" class="num" value="{{levelBonus}}" data-rw-field="levelBonus" data-user="{{userId}}">{{else}}+{{levelBonus}}{{/if}}
+            </td>
+            <td>
+              {{#if @root.isGM}}<input type="text" value="{{note}}" data-rw-field="note" data-user="{{userId}}">{{else}}{{note}}{{/if}}
+            </td>
+            <td class="total">{{total}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+        <tfoot><tr><td colspan="4">{{L.Rewards.DayTotal}}</td><td class="total">{{rw.session.totals.total}}</td></tr></tfoot>
+      </table>
+      {{#if isGM}}
+      <div class="sds-focus-nav">
+        <button type="button" data-action="rwPrev"><i class="fa-solid fa-chevron-left"></i> {{L.Rewards.Prev}}</button>
+        <button type="button" class="primary" data-action="rwCommit"><i class="fa-solid fa-feather-pointed"></i> {{L.Rewards.Commit}}</button>
+      </div>
+      <p class="hint">{{L.Rewards.CommitHint}}</p>
+      {{else}}
+      <p class="hint">{{L.Rewards.WaitingCommit}}</p>
+      {{/if}}
+    </div>
+    {{/if}}
+
+    {{else if rw.noStudio}}
+    <p class="sds-waiting"><i class="fa-solid fa-circle-exclamation"></i> {{L.Rewards.NoStudio}}</p>
+    {{else}}
+    <div class="sds-rw-setup">
+      <div class="sds-rw-heading">
+        <h2>{{rw.setup.nextLabel}}</h2>
+        {{#if isGM}}{{#if rw.studios}}
+        <label class="sds-studio-select" data-tooltip="{{L.Rewards.StudioHint}}">
+          <i class="fa-solid fa-feather-pointed"></i>
+          <select data-studio-select>
+            {{#each rw.studios}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}}</option>{{/each}}
+          </select>
+        </label>
+        {{/if}}{{else}}{{#if rw.studio}}<span class="sds-studio-name">{{rw.studio.name}}</span>{{/if}}{{/if}}
+      </div>
+      {{#if isGM}}
+      <div class="sds-calendar-edit">
+        <label>{{L.Rewards.Chapter}} <input type="number" min="1" value="{{rw.calendar.chapter}}" data-calendar="chapter"></label>
+        <label>{{L.Rewards.DaysDone}} <input type="number" min="0" value="{{rw.calendar.day}}" data-calendar="day"></label>
+      </div>
+      <div class="sds-kind" role="group">
+        <button type="button" data-action="rwKind" data-kind="day" class="{{#if (eq rw.setup.kind "day")}}active{{/if}}"><i class="fa-solid fa-sun"></i> {{L.Rewards.KindDay}}</button>
+        <button type="button" data-action="rwKind" data-kind="interview" class="{{#if (eq rw.setup.kind "interview")}}active{{/if}}"><i class="fa-solid fa-microphone"></i> {{L.Rewards.KindInterview}}</button>
+      </div>
+      <h3>{{L.Rewards.Participants}}</h3>
+      <ul class="sds-people">
+        {{#each rw.setup.people}}
+        <li class="{{#unless active}}offline{{/unless}}">
+          <label>
+            <input type="checkbox" data-rw-select="{{userId}}" {{#if checked}}checked{{/if}}>
+            <img src="{{img}}" alt="">
+            <span><strong>{{#if protagonist}}{{protagonist}}{{else}}<em>{{@root.L.Rewards.NoCharacter}}</em>{{/if}}</strong><br>
+              <span class="hint">{{author}}{{#if level}} · {{@root.L.Rewards.Level}} {{level}}{{/if}}{{#unless active}} · {{@root.L.Rewards.Offline}}{{/unless}}</span></span>
+          </label>
+        </li>
+        {{/each}}
+      </ul>
+      <button type="button" class="primary sds-start" data-action="rwStart" {{#unless rw.setup.canStart}}disabled{{/unless}}>
+        <i class="fa-solid fa-shuffle"></i> {{L.Rewards.Start}}
+      </button>
+      {{else}}
+      <p class="sds-waiting"><i class="fa-solid fa-hourglass-half"></i> {{L.Rewards.Waiting}}</p>
+      {{/if}}
+
+      <div class="sds-rw-records">
+        <div>
+          <h3>{{L.Rewards.Authors}}</h3>
+          {{#if rw.authors.length}}
+          <table>
+            <thead><tr><th>{{L.Rewards.Author}}</th><th>{{L.Rewards.Protagonist}}</th><th>{{L.Rewards.Record}}</th><th>{{L.Rewards.Lifetime}}</th></tr></thead>
+            <tbody>{{#each rw.authors}}<tr><td>{{name}}</td><td>{{protagonist}}</td><td>{{recordLevel}}</td><td>{{lifetime}}</td></tr>{{/each}}</tbody>
+          </table>
+          {{else}}<p class="hint">{{L.Rewards.NoAuthors}}</p>{{/if}}
+        </div>
+        <div>
+          <h3>{{L.Rewards.Recent}}</h3>
+          {{#if rw.recent.length}}
+          <ul class="sds-recent">{{#each rw.recent}}<li><span>{{label}}</span><strong>+{{total}}</strong></li>{{/each}}</ul>
+          {{else}}<p class="hint">{{L.Rewards.NoRecent}}</p>{{/if}}
+        </div>
+      </div>
+    </div>
+    {{/if}}
+  </div>
+
+  <aside class="sds-rw-side">
+    <h3>{{L.Rewards.RubricTitle}}</h3>
+    <table class="sds-rubric">
+      {{#each rw.rubric}}<tr class="pts-{{points}}"><td class="n">{{points}}</td><td>{{text}}</td></tr>{{/each}}
+    </table>
+    <p class="hint">{{L.Rewards.Limits}}</p>
+    <h3>{{L.Rewards.GuideTitle}}</h3>
+    <ul class="sds-guide">
+      {{#each L.Rewards.Guide}}<li>{{this}}</li>{{/each}}
+    </ul>
+    <h3>{{L.Rewards.PromptsTitle}}</h3>
+    <ul class="sds-guide prompts">
+      {{#each L.Rewards.Prompts}}<li>{{this}}</li>{{/each}}
+    </ul>
+    {{#if rw.session.isInterview}}<p class="sds-condition">{{L.Rewards.InterviewNote}}</p>{{/if}}
+  </aside>
+</section>
+{{else}}
+<section class="sds-tab" data-tab="rewards" hidden></section>
+{{/if}}

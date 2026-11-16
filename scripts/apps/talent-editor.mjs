@@ -2,7 +2,7 @@ import { MODULE_ID } from "../constants.mjs";
 import { mountEditors, readForm } from "../forms.mjs";
 import { currentLanguage, labels, pick, t } from "../i18n.mjs";
 import { createsCycle, renameTalentId, sortedTiers } from "../progression.mjs";
-import { getState, getTree, saveState, saveTree } from "../store.mjs";
+import { getRivals, getTree, saveRivals, saveTree } from "../store.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 
@@ -88,7 +88,7 @@ export class TalentEditor extends HandlebarsApplicationMixin(ApplicationV2) {
   static async #onSubmit(event, form) {
     const data = readForm(form);
     const tree = await getTree();
-    const state = getState();
+    const rivals = await getRivals();
     const newId = String(data.id ?? "").trim();
     if (!newId || !/^[\w-]+$/.test(newId)) {
       ui.notifications.error(t("Notify.InvalidId"));
@@ -133,8 +133,19 @@ export class TalentEditor extends HandlebarsApplicationMixin(ApplicationV2) {
       const talent = tree.talents.find(x => x.id === this.talentId);
       Object.assign(talent, fields);
       if (newId !== this.talentId) {
-        renameTalentId(tree, state, this.talentId, newId);
-        if (state.purchased.some(p => p.id === newId)) await saveState(state);
+        renameTalentId(tree, { purchased: [] }, this.talentId, newId);
+        let touched = false;
+        for (const g of rivals.groups) {
+          for (const p of g.purchased ?? []) if (p.id === this.talentId) {
+            p.id = newId;
+            touched = true;
+          }
+          if (g.upgrades?.includes(this.talentId)) {
+            g.upgrades = g.upgrades.map(u => (u === this.talentId ? newId : u));
+            touched = true;
+          }
+        }
+        if (touched) await saveRivals(rivals);
       }
     } else {
       tree.talents.push({ id: newId, ...fields });

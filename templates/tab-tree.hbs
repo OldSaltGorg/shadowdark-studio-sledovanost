@@ -1,52 +1,17 @@
-<div class="sds-root {{#if editMode}}editing{{/if}}">
-  <header class="sds-header">
-    <div class="sds-stat sds-popularity">
-      <label>{{L.Header.Popularity}}</label>
-      {{#if isGM}}
-      <input type="number" min="0" step="1" value="{{progress.popularity}}" data-state-field="popularity">
-      {{else}}
-      <span class="value">{{progress.popularity}}</span>
-      {{/if}}
-      <div class="sds-milestone" data-tooltip="{{progress.nextMilestoneText}}">
-        <div class="bar"><div class="fill" style="width: {{progress.toNext}}%"></div></div>
-        <span class="hint">{{progress.nextMilestoneText}}</span>
-      </div>
-    </div>
-    <div class="sds-stat">
-      <label>{{L.Header.Earned}}</label>
-      <span class="value">{{progress.earned}}</span>
-      <span class="hint">{{progress.milestones}} {{L.Header.Milestones}}</span>
-    </div>
-    <div class="sds-stat">
-      <label>{{L.Header.Spent}}</label>
-      <span class="value">{{progress.spent}}</span>
-      <span class="hint">{{progress.ownedCount}}/{{progress.totalCount}} {{L.Header.Owned}}</span>
-    </div>
-    <div class="sds-stat sds-available {{#if progress.availableNegative}}negative{{/if}}">
-      <label>{{L.Header.Available}}</label>
-      <span class="value">{{progress.available}}</span>
-      <span class="hint">SP</span>
-    </div>
+{{#if (eq activeTab "tree")}}
+<section class="sds-tab sds-tab-tree {{#if editMode}}editing{{/if}}" data-tab="tree">
+  <div class="sds-treebar">
+    <span class="hint"><i class="fa-solid fa-check"></i> {{ownedCount}}/{{totalCount}} {{L.Header.Owned}}</span>
     {{#if isGM}}
-    <div class="sds-stat sds-adjust">
-      <label data-tooltip="{{L.Header.AdjustmentHint}}">{{L.Header.Adjustment}}</label>
-      <input type="number" step="1" value="{{progress.adjustment}}" data-state-field="spAdjustment">
-    </div>
+    <label class="sds-inline" data-tooltip="{{L.Header.PopularityHint}}">{{L.Header.Popularity}}
+      <input type="number" min="0" step="1" value="{{progress.popularity}}" data-state-field="popularity"></label>
+    <label class="sds-inline" data-tooltip="{{L.Header.AdjustmentHint}}">{{L.Header.Adjustment}}
+      <input type="number" step="1" value="{{progress.adjustment}}" data-state-field="spAdjustment"></label>
+    <button type="button" class="sds-edit-toggle {{#if editMode}}active{{/if}}" data-action="toggleEdit">
+      <i class="fa-solid {{#if editMode}}fa-lock-open{{else}}fa-pen-ruler{{/if}}"></i> {{L.Action.EditMode}}
+    </button>
     {{/if}}
-
-    <div class="sds-toolbar">
-      <div class="sds-lang" role="group">
-        {{#each langs}}
-        <button type="button" data-action="setLanguage" data-lang="{{id}}" class="{{#if active}}active{{/if}}">{{label}}</button>
-        {{/each}}
-      </div>
-      {{#if isGM}}
-      <button type="button" class="sds-edit-toggle {{#if editMode}}active{{/if}}" data-action="toggleEdit">
-        <i class="fa-solid {{#if editMode}}fa-lock-open{{else}}fa-pen-ruler{{/if}}"></i> {{L.Action.EditMode}}
-      </button>
-      {{/if}}
-    </div>
-  </header>
+  </div>
 
   {{#if editMode}}
   <div class="sds-editbar">
@@ -241,4 +206,7 @@
       {{/if}}
     </aside>
   </div>
-</div>
+</section>
+{{else}}
+<section class="sds-tab" data-tab="tree" hidden></section>
+{{/if}}

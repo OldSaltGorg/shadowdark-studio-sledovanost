@@ -3,7 +3,7 @@
  * so these functions can be unit-tested with plain Node.
  */
 
-/** Sledovanost needed for milestone n: 5 × n × (n + 3). */
+/** Popularita needed for milestone n: 5 × n × (n + 3). */
 export function milestoneThreshold(n) {
   return 5 * n * (n + 3);
 }

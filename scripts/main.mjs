@@ -1,8 +1,8 @@
 import { APP_ID, MODULE_ID } from "./constants.mjs";
 import { loadDictionaries } from "./i18n.mjs";
 import * as progression from "./progression.mjs";
-import { ensureTreeInitialized, getState, getTree, registerSettings } from "./store.mjs";
-import { StudioTreeApp } from "./apps/studio-tree.mjs";
+import { ensureTreeInitialized, getRivals, getStudio, getTree, registerSettings } from "./store.mjs";
+import { StudioApp } from "./apps/studio-app.mjs";
 
 function openStudio() {
   const existing = foundry.applications.instances.get(APP_ID);
@@ -10,7 +10,7 @@ function openStudio() {
     existing.bringToFront?.();
     return existing.render({ force: true });
   }
-  return new StudioTreeApp().render({ force: true });
+  return new StudioApp().render({ force: true });
 }
 
 function toggleStudio() {
@@ -21,7 +21,7 @@ function toggleStudio() {
 
 Hooks.once("init", () => {
   registerSettings();
-  game.modules.get(MODULE_ID).api = { open: openStudio, toggle: toggleStudio, getTree, getState, progression };
+  game.modules.get(MODULE_ID).api = { open: openStudio, toggle: toggleStudio, getTree, getStudio, getRivals, progression };
 });
 
 Hooks.once("ready", async () => {

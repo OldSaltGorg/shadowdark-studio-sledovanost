@@ -1,0 +1,2030 @@
+{
+  "schema": 1,
+  "title": "Žebříček Popularity",
+  "groups": [
+    {
+      "id": "baziliskobijci",
+      "name": "Baziliškobijci",
+      "face": "Serenia Stříbrolistá",
+      "isPlayer": false,
+      "status": "active",
+      "profile": 2,
+      "cap": 10,
+      "authors": 5,
+      "startScore": 20,
+      "reputation": "přesní lovci velkých příšer, kteří z každého vítězství udělají značku",
+      "goal": "pokořit něco, co nikdo před nimi nedokázal",
+      "weakness": "Serenia považuje ponížení za horší než finanční ztrátu",
+      "relationship": "Serenia pozná Melga a žádá vrácení poháru nebo veřejné narovnání. Neútočí automaticky při setkání; chce svědky a reputační vítězství. Nabídka: informace o nebezpečném protivníkovi výměnou za předmět nebo službu.",
+      "episodes": "třetí den skolili baziliška s použitím zakrytých zrcadel; sedmý den zajistili jeho hnízdo bez ztráty člena. Osmý den měli nákladný nezdar při vyjednávání o trofejích, nikoli tajnou smrt postavy.",
+      "notes": "",
+      "members": [
+        {
+          "name": "Serenia Stříbrolistá",
+          "ancestry": "Elfka",
+          "class": "čarodějka",
+          "level": 4,
+          "stats": {
+            "str": 8,
+            "dex": 13,
+            "con": 10,
+            "int": 16,
+            "wis": 12,
+            "cha": 14
+          },
+          "hp": 12,
+          "ac": 11,
+          "gear": "Hůl, kouzelnická kniha, zakryté zrcátko; plánuje boj a sbírá trofeje."
+        },
+        {
+          "name": "Hektor Kamenné víčko",
+          "ancestry": "Člověk",
+          "class": "bojovník",
+          "level": 4,
+          "stats": {
+            "str": 16,
+            "dex": 11,
+            "con": 14,
+            "int": 9,
+            "wis": 12,
+            "cha": 10
+          },
+          "hp": 25,
+          "ac": 15,
+          "gear": "Meč, kroužková zbroj a štít; drží nebezpečnou kořist čelem od týmu."
+        },
+        {
+          "name": "Brina Šikmý řez",
+          "ancestry": "Trpaslice",
+          "class": "bojovnice",
+          "level": 3,
+          "stats": {
+            "str": 15,
+            "dex": 10,
+            "con": 15,
+            "int": 10,
+            "wis": 11,
+            "cha": 9
+          },
+          "hp": 22,
+          "ac": 13,
+          "gear": "Sekera a kroužková zbroj; zajišťuje ústup."
+        },
+        {
+          "name": "Ticho",
+          "ancestry": "Půlčík",
+          "class": "zloděj",
+          "level": 3,
+          "stats": {
+            "str": 9,
+            "dex": 16,
+            "con": 11,
+            "int": 13,
+            "wis": 12,
+            "cha": 10
+          },
+          "hp": 12,
+          "ac": 14,
+          "gear": "Kožená zbroj, dýka a prak; značkuje únikové cesty."
+        },
+        {
+          "name": "Otec Radan",
+          "ancestry": "Člověk",
+          "class": "kněz",
+          "level": 3,
+          "stats": {
+            "str": 11,
+            "dex": 10,
+            "con": 13,
+            "int": 12,
+            "wis": 15,
+            "cha": 12
+          },
+          "hp": 16,
+          "ac": 13,
+          "gear": "Palcát, kožená zbroj a štít; Ordův kněz a správce trofejního rejstříku."
+        }
+      ],
+      "upgrades": [
+        "I11",
+        "E11",
+        "U11",
+        "E12",
+        "E21"
+      ],
+      "history": [
+        {
+          "chapter": 1,
+          "day": 1,
+          "kind": "day",
+          "roll": 4,
+          "base": 6,
+          "profile": 2,
+          "gain": 8,
+          "headline": "Výkon typický pro dané studio."
+        },
+        {
+          "chapter": 1,
+          "day": 2,
+          "kind": "day",
+          "roll": 3,
+          "base": 5,
+          "profile": 2,
+          "gain": 7,
+          "headline": "Úspěšná výprava nebo objev."
+        },
+        {
+          "chapter": 1,
+          "day": 3,
+          "kind": "day",
+          "roll": 6,
+          "base": 8,
+          "profile": 2,
+          "gain": 10,
+          "headline": "Průlomová epizoda nebo dramatický zvrat."
+        },
+        {
+          "chapter": 1,
+          "day": 4,
+          "kind": "day",
+          "roll": 3,
+          "base": 5,
+          "profile": 2,
+          "gain": 7,
+          "headline": "Úspěšná výprava nebo objev."
+        },
+        {
+          "chapter": 1,
+          "day": 5,
+          "kind": "day",
+          "roll": 4,
+          "base": 6,
+          "profile": 2,
+          "gain": 8,
+          "headline": "Výkon typický pro dané studio."
+        },
+        {
+          "chapter": 1,
+          "day": 6,
+          "kind": "day",
+          "roll": 5,
+          "base": 7,
+          "profile": 2,
+          "gain": 9,
+          "headline": "Velký úspěch nebo obrat v rivalitě."
+        },
+        {
+          "chapter": 1,
+          "day": 7,
+          "kind": "day",
+          "roll": 6,
+          "base": 8,
+          "profile": 2,
+          "gain": 10,
+          "headline": "Průlomová epizoda nebo dramatický zvrat."
+        },
+        {
+          "chapter": 1,
+          "day": 8,
+          "kind": "day",
+          "roll": 1,
+          "base": 1,
+          "profile": 2,
+          "gain": 3,
+          "headline": "Nákladný nezdar nebo ústup."
+        },
+        {
+          "chapter": 1,
+          "day": 9,
+          "kind": "day",
+          "roll": 4,
+          "base": 6,
+          "profile": 2,
+          "gain": 8,
+          "headline": "Výkon typický pro dané studio."
+        },
+        {
+          "chapter": 1,
+          "day": 10,
+          "kind": "day",
+          "roll": 5,
+          "base": 7,
+          "profile": 2,
+          "gain": 9,
+          "headline": "Velký úspěch nebo obrat v rivalitě."
+        },
+        {
+          "chapter": 1,
+          "day": null,
+          "kind": "interview",
+          "roll": 3,
+          "base": 5,
+          "profile": 0,
+          "gain": 5,
+          "headline": "Úspěšná výprava nebo objev."
+        }
+      ]
+    },
+    {
+      "id": "zlata-tiraz",
+      "name": "Zlatá tiráž",
+      "face": "Aurelia Vossová",
+      "isPlayer": false,
+      "status": "active",
+      "profile": 2,
+      "cap": 10,
+      "authors": 5,
+      "startScore": 15,
+      "reputation": "dokonale naleštěná družina, která si ze všeho udělá slavnostní fotografii",
+      "goal": "udržet dojem bezchybnosti",
+      "weakness": "jejich vůdkyně nesnáší nečekané otázky",
+      "relationship": "",
+      "episodes": "osmý den zachránili obřadní prapor z padající věže. Devátý den se kvůli pózování opozdili s předáním nálezu. Rozhovor dopadl bídně: Aurelia odmítla odpovědět, koho nechali čekat pod sutinami. Dotyčný přežil; nejde o skrytou úpravu výsledků.",
+      "notes": "",
+      "members": [
+        {
+          "name": "Aurelia Vossová",
+          "ancestry": "Člověk",
+          "class": "bojovnice",
+          "level": 4,
+          "stats": {
+            "str": 15,
+            "dex": 13,
+            "con": 13,
+            "int": 11,
+            "wis": 10,
+            "cha": 16
+          },
+          "hp": 24,
+          "ac": 15,
+          "gear": "Meč, kroužková zbroj a štít; tvář studia."
+        },
+        {
+          "name": "Irien Lakovaný",
+          "ancestry": "Elf",
+          "class": "čaroděj",
+          "level": 3,
+          "stats": {
+            "str": 8,
+            "dex": 14,
+            "con": 11,
+            "int": 16,
+            "wis": 10,
+            "cha": 13
+          },
+          "hp": 10,
+          "ac": 12,
+          "gear": "Hůl a pečlivě zdobená kniha; světelné efekty a průzkum."
+        },
+        {
+          "name": "Kněz Bonifác",
+          "ancestry": "Člověk",
+          "class": "kněz",
+          "level": 3,
+          "stats": {
+            "str": 12,
+            "dex": 9,
+            "con": 14,
+            "int": 10,
+            "wis": 15,
+            "cha": 13
+          },
+          "hp": 17,
+          "ac": 15,
+          "gear": "Palcát, kroužková zbroj a štít; patron pořádku Madeera."
+        },
+        {
+          "name": "Nela V hedvábí",
+          "ancestry": "Půlčice",
+          "class": "zlodějka",
+          "level": 3,
+          "stats": {
+            "str": 8,
+            "dex": 16,
+            "con": 12,
+            "int": 12,
+            "wis": 11,
+            "cha": 15
+          },
+          "hp": 13,
+          "ac": 14,
+          "gear": "Dýky, kožená zbroj a šperkařské nástroje; vyjednává a odjišťuje."
+        },
+        {
+          "name": "Borun Zlacení",
+          "ancestry": "Trpaslík",
+          "class": "bojovník",
+          "level": 3,
+          "stats": {
+            "str": 16,
+            "dex": 9,
+            "con": 15,
+            "int": 10,
+            "wis": 12,
+            "cha": 8
+          },
+          "hp": 22,
+          "ac": 13,
+          "gear": "Válečné kladivo a kroužková zbroj; nese těžké vybavení."
+        }
+      ],
+      "upgrades": [
+        "I12",
+        "E11",
+        "U11",
+        "U13",
+        "U21"
+      ],
+      "history": [
+        {
+          "chapter": 1,
+          "day": 1,
+          "kind": "day",
+          "roll": 2,
+          "base": 3,
+          "profile": 2,
+          "gain": 5,
+          "headline": "Běžný postup."
+        },
+        {
+          "chapter": 1,
+          "day": 2,
+          "kind": "day",
+          "roll": 5,
+          "base": 7,
+          "profile": 2,
+          "gain": 9,
+          "headline": "Velký úspěch nebo obrat v rivalitě."
+        },
+        {
+          "chapter": 1,
+          "day": 3,
+          "kind": "day",
+          "roll": 5,
+          "base": 7,
+          "profile": 2,
+          "gain": 9,
+          "headline": "Velký úspěch nebo obrat v rivalitě."
+        },
+        {
+          "chapter": 1,
+          "day": 4,
+          "kind": "day",
+          "roll": 4,
+          "base": 6,
+          "profile": 2,
+          "gain": 8,
+          "headline": "Výkon typický pro dané studio."
+        },
+        {
+          "chapter": 1,
+          "day": 5,
+          "kind": "day",
+          "roll": 5,
+          "base": 7,
+          "profile": 2,
+          "gain": 9,
+          "headline": "Velký úspěch nebo obrat v rivalitě."
+        },
+        {
+          "chapter": 1,
+          "day": 6,
+          "kind": "day",
+          "roll": 5,
+          "base": 7,
+          "profile": 2,
+          "gain": 9,
+          "headline": "Velký úspěch nebo obrat v rivalitě."
+        },
+        {
+          "chapter": 1,
+          "day": 7,
+          "kind": "day",
+          "roll": 4,
+          "base": 6,
+          "profile": 2,
+          "gain": 8,
+          "headline": "Výkon typický pro dané studio."
+        },
+        {
+          "chapter": 1,
+          "day": 8,
+          "kind": "day",
+          "roll": 6,
+          "base": 8,
+          "profile": 2,
+          "gain": 10,
+          "headline": "Průlomová epizoda nebo dramatický zvrat."
+        },
+        {
+          "chapter": 1,
+          "day": 9,
+          "kind": "day",
+          "roll": 1,
+          "base": 1,
+          "profile": 2,
+          "gain": 3,
+          "headline": "Nákladný nezdar nebo ústup."
+        },
+        {
+          "chapter": 1,
+          "day": 10,
+          "kind": "day",
+          "roll": 4,
+          "base": 6,
+          "profile": 2,
+          "gain": 8,
+          "headline": "Výkon typický pro dané studio."
+        },
+        {
+          "chapter": 1,
+          "day": null,
+          "kind": "interview",
+          "roll": 1,
+          "base": 1,
+          "profile": 0,
+          "gain": 1,
+          "headline": "Nákladný nezdar nebo ústup."
+        }
+      ]
+    },
+    {
+      "id": "pet-podpisu-krvi",
+      "name": "Pět podpisů krví",
+      "face": "Kora Rudá čára",
+      "isPlayer": false,
+      "status": "active",
+      "profile": 1,
+      "cap": 10,
+      "authors": 5,
+      "startScore": 8,
+      "reputation": "družina uzavírající vzájemné sliby; žádný člen neodchází sám",
+      "goal": "najít způsob, jak odmítnout nespravedlivou smlouvu",
+      "weakness": "příliš dlouho drží slib, který už nefunguje",
+      "relationship": "",
+      "episodes": "první tři dny vyvedli zajatce, zajistili cestu a ubránili evakuaci. Osmý a devátý den se jejich tvrdohlavá přísaha zdržet ústup změnila v nákladný pat. V rozhovoru veřejně odmítli odměnu podmíněnou vydáním zachráněného svědka.",
+      "notes": "",
+      "members": [
+        {
+          "name": "Kora Rudá čára",
+          "ancestry": "Půlorkyně",
+          "class": "bojovnice",
+          "level": 3,
+          "stats": {
+            "str": 16,
+            "dex": 11,
+            "con": 14,
+            "int": 9,
+            "wis": 12,
+            "cha": 13
+          },
+          "hp": 22,
+          "ac": 15,
+          "gear": "Meč, kroužková zbroj a štít; mluvčí přísahy."
+        },
+        {
+          "name": "Jasmín Bez pečeti",
+          "ancestry": "Člověk",
+          "class": "kněz",
+          "level": 3,
+          "stats": {
+            "str": 10,
+            "dex": 12,
+            "con": 13,
+            "int": 11,
+            "wis": 16,
+            "cha": 12
+          },
+          "hp": 16,
+          "ac": 14,
+          "gear": "Palcát, kožená zbroj a štít; víra v Gede, léčba a smír."
+        },
+        {
+          "name": "Vex",
+          "ancestry": "Goblin",
+          "class": "zloděj",
+          "level": 3,
+          "stats": {
+            "str": 9,
+            "dex": 16,
+            "con": 12,
+            "int": 13,
+            "wis": 11,
+            "cha": 10
+          },
+          "hp": 13,
+          "ac": 14,
+          "gear": "Krátký luk, dýka, kožená zbroj; průzkumník."
+        },
+        {
+          "name": "Edda Sazba",
+          "ancestry": "Trpaslice",
+          "class": "čarodějka",
+          "level": 3,
+          "stats": {
+            "str": 9,
+            "dex": 11,
+            "con": 14,
+            "int": 15,
+            "wis": 12,
+            "cha": 10
+          },
+          "hp": 13,
+          "ac": 10,
+          "gear": "Hůl, kniha a měděná pera; čte smluvní klauzule."
+        },
+        {
+          "name": "Olin Pátý",
+          "ancestry": "Člověk",
+          "class": "bojovník",
+          "level": 3,
+          "stats": {
+            "str": 14,
+            "dex": 13,
+            "con": 13,
+            "int": 10,
+            "wis": 11,
+            "cha": 12
+          },
+          "hp": 19,
+          "ac": 13,
+          "gear": "Kopí a kroužková zbroj; uzavírá formaci."
+        }
+      ],
+      "upgrades": [
+        "I13",
+        "E12"
+      ],
+      "history": [
+        {
+          "chapter": 1,
+          "day": 1,
+          "kind": "day",
+          "roll": 6,
+          "base": 8,
+          "profile": 1,
+          "gain": 9,
+          "headline": "Průlomová epizoda nebo dramatický zvrat."
+        },
+        {
+          "chapter": 1,
+          "day": 2,
+          "kind": "day",
+          "roll": 6,
+          "base": 8,
+          "profile": 1,
+          "gain": 9,
+          "headline": "Průlomová epizoda nebo dramatický zvrat."
+        },
+        {
+          "chapter": 1,
+          "day": 3,
+          "kind": "day",
+          "roll": 6,
+          "base": 8,
+          "profile": 1,
+          "gain": 9,
+          "headline": "Průlomová epizoda nebo dramatický zvrat."
+        },
+        {
+          "chapter": 1,
+          "day": 4,
+          "kind": "day",
+          "roll": 3,
+          "base": 5,
+          "profile": 1,
+          "gain": 6,
+          "headline": "Úspěšná výprava nebo objev."
+        },
+        {
+          "chapter": 1,
+          "day": 5,
+          "kind": "day",
+          "roll": 6,
+          "base": 8,
+          "profile": 1,
+          "gain": 9,
+          "headline": "Průlomová epizoda nebo dramatický zvrat."
+        },
+        {
+          "chapter": 1,
+          "day": 6,
+          "kind": "day",
+          "roll": 3,
+          "base": 5,
+          "profile": 1,
+          "gain": 6,
+          "headline": "Úspěšná výprava nebo objev."
+        },
+        {
+          "chapter": 1,
+          "day": 7,
+          "kind": "day",
+          "roll": 5,
+          "base": 7,
+          "profile": 1,
+          "gain": 8,
+          "headline": "Velký úspěch nebo obrat v rivalitě."
+        },
+        {
+          "chapter": 1,
+          "day": 8,
+          "kind": "day",
+          "roll": 1,
+          "base": 1,
+          "profile": 1,
+          "gain": 2,
+          "headline": "Nákladný nezdar nebo ústup."
+        },
+        {
+          "chapter": 1,
+          "day": 9,
+          "kind": "day",
+          "roll": 1,
+          "base": 1,
+          "profile": 1,
+          "gain": 2,
+          "headline": "Nákladný nezdar nebo ústup."
+        },
+        {
+          "chapter": 1,
+          "day": 10,
+          "kind": "day",
+          "roll": 5,
+          "base": 7,
+          "profile": 1,
+          "gain": 8,
+          "headline": "Velký úspěch nebo obrat v rivalitě."
+        },
+        {
+          "chapter": 1,
+          "day": null,
+          "kind": "interview",
+          "roll": 6,
+          "base": 8,
+          "profile": 0,
+          "gain": 8,
+          "headline": "Průlomová epizoda nebo dramatický zvrat."
+        }
+      ]
+    },
+    {
+      "id": "rezave-lucerny",
+      "name": "Rezavé lucerny",
+      "face": "Dorga Knotová",
+      "isPlayer": false,
+      "status": "active",
+      "profile": 1,
+      "cap": 10,
+      "authors": 5,
+      "startScore": 10,
+      "reputation": "staré nářadí, nové mapy a žádná zbytečná řeč",
+      "goal": "udržet průchodné cesty pro menší družiny",
+      "weakness": "podceňují vlastní potřeby",
+      "relationship": "",
+      "episodes": "šestý den převedli zásoby přes tři hroutící se lávky. Sedmý a devátý den věnovali slabším nálezům a opravám vlastní trasy; jejich pořadí roste bez jediného okázalého lovu bossů.",
+      "notes": "",
+      "members": [
+        {
+          "name": "Dorga Knotová",
+          "ancestry": "Trpaslice",
+          "class": "bojovnice",
+          "level": 3,
+          "stats": {
+            "str": 15,
+            "dex": 10,
+            "con": 16,
+            "int": 11,
+            "wis": 12,
+            "cha": 9
+          },
+          "hp": 23,
+          "ac": 15,
+          "gear": "Sekera, kroužková zbroj a štít; vede trasu."
+        },
+        {
+          "name": "Matěj Poslední sirka",
+          "ancestry": "Člověk",
+          "class": "zloděj",
+          "level": 3,
+          "stats": {
+            "str": 10,
+            "dex": 15,
+            "con": 12,
+            "int": 13,
+            "wis": 12,
+            "cha": 11
+          },
+          "hp": 13,
+          "ac": 13,
+          "gear": "Prak, dýka a kožená zbroj; měří vzdálenosti a zajišťuje světlo."
+        },
+        {
+          "name": "Rilka",
+          "ancestry": "Goblinka",
+          "class": "kněžka",
+          "level": 3,
+          "stats": {
+            "str": 9,
+            "dex": 14,
+            "con": 12,
+            "int": 10,
+            "wis": 15,
+            "cha": 12
+          },
+          "hp": 15,
+          "ac": 15,
+          "gear": "Palcát, kožená zbroj a štít; Ordova věřící."
+        },
+        {
+          "name": "Sen Záhyb",
+          "ancestry": "Elf",
+          "class": "čaroděj",
+          "level": 3,
+          "stats": {
+            "str": 8,
+            "dex": 13,
+            "con": 11,
+            "int": 16,
+            "wis": 14,
+            "cha": 10
+          },
+          "hp": 10,
+          "ac": 11,
+          "gear": "Hůl a mapová kniha; rozpoznává opakující se vzory."
+        },
+        {
+          "name": "Tam Dlouhé lano",
+          "ancestry": "Půlčík",
+          "class": "bojovník",
+          "level": 2,
+          "stats": {
+            "str": 13,
+            "dex": 14,
+            "con": 12,
+            "int": 10,
+            "wis": 12,
+            "cha": 11
+          },
+          "hp": 13,
+          "ac": 13,
+          "gear": "Kopí a kožená zbroj; jištění na laně."
+        }
+      ],
+      "upgrades": [
+        "I11",
+        "I13",
+        "U11",
+        "U13"
+      ],
+      "history": [
+        {
+          "chapter": 1,
+          "day": 1,
+          "kind": "day",
+          "roll": 4,
+          "base": 6,
+          "profile": 1,
+          "gain": 7,
+          "headline": "Výkon typický pro dané studio."
+        },
+        {
+          "chapter": 1,
+          "day": 2,
+          "kind": "day",
+          "roll": 3,
+          "base": 5,
+          "profile": 1,
+          "gain": 6,
+          "headline": "Úspěšná výprava nebo objev."
+        },
+        {
+          "chapter": 1,
+          "day": 3,
+          "kind": "day",
+          "roll": 5,
+          "base": 7,
+          "profile": 1,
+          "gain": 8,
+          "headline": "Velký úspěch nebo obrat v rivalitě."
+        },
+        {
+          "chapter": 1,
+          "day": 4,
+          "kind": "day",
+          "roll": 5,
+          "base": 7,
+          "profile": 1,
+          "gain": 8,
+          "headline": "Velký úspěch nebo obrat v rivalitě."
+        },
+        {
+          "chapter": 1,
+          "day": 5,
+          "kind": "day",
+          "roll": 4,
+          "base": 6,
+          "profile": 1,
+          "gain": 7,
+          "headline": "Výkon typický pro dané studio."
+        },
+        {
+          "chapter": 1,
+          "day": 6,
+          "kind": "day",
+          "roll": 5,
+          "base": 7,
+          "profile": 1,
+          "gain": 8,
+          "headline": "Velký úspěch nebo obrat v rivalitě."
+        },
+        {
+          "chapter": 1,
+          "day": 7,
+          "kind": "day",
+          "roll": 2,
+          "base": 3,
+          "profile": 1,
+          "gain": 4,
+          "headline": "Běžný postup."
+        },
+        {
+          "chapter": 1,
+          "day": 8,
+          "kind": "day",
+          "roll": 5,
+          "base": 7,
+          "profile": 1,
+          "gain": 8,
+          "headline": "Velký úspěch nebo obrat v rivalitě."
+        },
+        {
+          "chapter": 1,
+          "day": 9,
+          "kind": "day",
+          "roll": 2,
+          "base": 3,
+          "profile": 1,
+          "gain": 4,
+          "headline": "Běžný postup."
+        },
+        {
+          "chapter": 1,
+          "day": 10,
+          "kind": "day",
+          "roll": 3,
+          "base": 5,
+          "profile": 1,
+          "gain": 6,
+          "headline": "Úspěšná výprava nebo objev."
+        },
+        {
+          "chapter": 1,
+          "day": null,
+          "kind": "interview",
+          "roll": 3,
+          "base": 5,
+          "profile": 0,
+          "gain": 5,
+          "headline": "Úspěšná výprava nebo objev."
+        }
+      ]
+    },
+    {
+      "id": "posledni-korektura",
+      "name": "Poslední korektura",
+      "face": "Sáva Poznámka",
+      "isPlayer": false,
+      "status": "active",
+      "profile": 1,
+      "cap": 10,
+      "authors": 5,
+      "startScore": 12,
+      "reputation": "plánovači, kteří si každé dveře zakreslí dvakrát",
+      "goal": "dokázat, že rychlost a chaos nejsou jediná zábava",
+      "weakness": "dokonalý plán trvá příliš dlouho",
+      "relationship": "",
+      "episodes": "čtvrtý den obešli časovanou past předem změřenou trasou. V rozhovoru strávili odpověď výčtem všech oprav mapy a moderátor je přerušil. Nejsou ztotožněni s lidmi, kteří vždy vědí pravdu: zkoumají skutečné důkazy.",
+      "notes": "",
+      "members": [
+        {
+          "name": "Sáva Poznámka",
+          "ancestry": "Člověk",
+          "class": "čarodějka",
+          "level": 3,
+          "stats": {
+            "str": 8,
+            "dex": 12,
+            "con": 12,
+            "int": 16,
+            "wis": 14,
+            "cha": 11
+          },
+          "hp": 11,
+          "ac": 11,
+          "gear": "Hůl, kniha a červená tužka; analýza stop."
+        },
+        {
+          "name": "Běl Tři klíče",
+          "ancestry": "Půlčík",
+          "class": "zloděj",
+          "level": 3,
+          "stats": {
+            "str": 9,
+            "dex": 16,
+            "con": 11,
+            "int": 14,
+            "wis": 12,
+            "cha": 10
+          },
+          "hp": 12,
+          "ac": 14,
+          "gear": "Dýka, kožená zbroj a paklíče; testuje zámky."
+        },
+        {
+          "name": "Hron",
+          "ancestry": "Trpaslík",
+          "class": "bojovník",
+          "level": 3,
+          "stats": {
+            "str": 15,
+            "dex": 10,
+            "con": 15,
+            "int": 12,
+            "wis": 11,
+            "cha": 9
+          },
+          "hp": 22,
+          "ac": 15,
+          "gear": "Meč, kroužková zbroj a štít; počítá zásoby."
+        },
+        {
+          "name": "Iva Měřítko",
+          "ancestry": "Člověk",
+          "class": "kněžka",
+          "level": 3,
+          "stats": {
+            "str": 10,
+            "dex": 11,
+            "con": 13,
+            "int": 13,
+            "wis": 15,
+            "cha": 12
+          },
+          "hp": 16,
+          "ac": 13,
+          "gear": "Palcát, kožená zbroj a štít; Madeera a smluvní přesnost."
+        },
+        {
+          "name": "Rask Dvojtečka",
+          "ancestry": "Půlork",
+          "class": "bojovník",
+          "level": 3,
+          "stats": {
+            "str": 16,
+            "dex": 12,
+            "con": 13,
+            "int": 9,
+            "wis": 12,
+            "cha": 10
+          },
+          "hp": 21,
+          "ac": 13,
+          "gear": "Obouruční meč a kroužková zbroj; trpělivá ochrana čtenářů map."
+        }
+      ],
+      "upgrades": [
+        "I11",
+        "I12",
+        "E11",
+        "U11"
+      ],
+      "history": [
+        {
+          "chapter": 1,
+          "day": 1,
+          "kind": "day",
+          "roll": 4,
+          "base": 6,
+          "profile": 1,
+          "gain": 7,
+          "headline": "Výkon typický pro dané studio."
+        },
+        {
+          "chapter": 1,
+          "day": 2,
+          "kind": "day",
+          "roll": 4,
+          "base": 6,
+          "profile": 1,
+          "gain": 7,
+          "headline": "Výkon typický pro dané studio."
+        },
+        {
+          "chapter": 1,
+          "day": 3,
+          "kind": "day",
+          "roll": 3,
+          "base": 5,
+          "profile": 1,
+          "gain": 6,
+          "headline": "Úspěšná výprava nebo objev."
+        },
+        {
+          "chapter": 1,
+          "day": 4,
+          "kind": "day",
+          "roll": 6,
+          "base": 8,
+          "profile": 1,
+          "gain": 9,
+          "headline": "Průlomová epizoda nebo dramatický zvrat."
+        },
+        {
+          "chapter": 1,
+          "day": 5,
+          "kind": "day",
+          "roll": 4,
+          "base": 6,
+          "profile": 1,
+          "gain": 7,
+          "headline": "Výkon typický pro dané studio."
+        },
+        {
+          "chapter": 1,
+          "day": 6,
+          "kind": "day",
+          "roll": 4,
+          "base": 6,
+          "profile": 1,
+          "gain": 7,
+          "headline": "Výkon typický pro dané studio."
+        },
+        {
+          "chapter": 1,
+          "day": 7,
+          "kind": "day",
+          "roll": 2,
+          "base": 3,
+          "profile": 1,
+          "gain": 4,
+          "headline": "Běžný postup."
+        },
+        {
+          "chapter": 1,
+          "day": 8,
+          "kind": "day",
+          "roll": 3,
+          "base": 5,
+          "profile": 1,
+          "gain": 6,
+          "headline": "Úspěšná výprava nebo objev."
+        },
+        {
+          "chapter": 1,
+          "day": 9,
+          "kind": "day",
+          "roll": 3,
+          "base": 5,
+          "profile": 1,
+          "gain": 6,
+          "headline": "Úspěšná výprava nebo objev."
+        },
+        {
+          "chapter": 1,
+          "day": 10,
+          "kind": "day",
+          "roll": 5,
+          "base": 7,
+          "profile": 1,
+          "gain": 8,
+          "headline": "Velký úspěch nebo obrat v rivalitě."
+        },
+        {
+          "chapter": 1,
+          "day": null,
+          "kind": "interview",
+          "roll": 1,
+          "base": 1,
+          "profile": 0,
+          "gain": 1,
+          "headline": "Nákladný nezdar nebo ústup."
+        }
+      ]
+    },
+    {
+      "id": "sberatele-poslednich-slov",
+      "name": "Sběratelé posledních slov",
+      "face": "Elian Tichopis",
+      "isPlayer": false,
+      "status": "active",
+      "profile": 0,
+      "cap": 10,
+      "authors": 5,
+      "startScore": 8,
+      "reputation": "zachraňují dopisy a jména lidí, které ostatní odepsali",
+      "goal": "vrátit zprávy jejich adresátům",
+      "weakness": "nechají se odvést od vlastní výpravy každým nedoručeným slibem",
+      "relationship": "",
+      "episodes": "první den ztratili část zásob v zatopené kryptě. Druhý, čtvrtý a pátý den zachránili poštovní vak, vyvedli dva svědky a našli adresáta dopisu. Desátý den doručili poslední zprávu před uzavřením průchodu.",
+      "notes": "",
+      "members": [
+        {
+          "name": "Elian Tichopis",
+          "ancestry": "Elf",
+          "class": "kněz",
+          "level": 3,
+          "stats": {
+            "str": 9,
+            "dex": 13,
+            "con": 11,
+            "int": 14,
+            "wis": 16,
+            "cha": 12
+          },
+          "hp": 14,
+          "ac": 14,
+          "gear": "Palcát, kožená zbroj a štít; Ordův správce svědectví."
+        },
+        {
+          "name": "Mara Cizí jméno",
+          "ancestry": "Člověk",
+          "class": "zlodějka",
+          "level": 3,
+          "stats": {
+            "str": 10,
+            "dex": 16,
+            "con": 12,
+            "int": 12,
+            "wis": 13,
+            "cha": 11
+          },
+          "hp": 13,
+          "ac": 14,
+          "gear": "Dýka, krátký luk a kožená zbroj; doručovatelka."
+        },
+        {
+          "name": "Kelm",
+          "ancestry": "Trpaslík",
+          "class": "bojovník",
+          "level": 3,
+          "stats": {
+            "str": 15,
+            "dex": 9,
+            "con": 16,
+            "int": 10,
+            "wis": 13,
+            "cha": 8
+          },
+          "hp": 23,
+          "ac": 15,
+          "gear": "Kladivo, kroužková zbroj a štít; nese truhlu s dopisy."
+        },
+        {
+          "name": "Niv Inkoust",
+          "ancestry": "Goblin",
+          "class": "čaroděj",
+          "level": 2,
+          "stats": {
+            "str": 8,
+            "dex": 14,
+            "con": 11,
+            "int": 15,
+            "wis": 12,
+            "cha": 10
+          },
+          "hp": 7,
+          "ac": 12,
+          "gear": "Hůl a zašitá kniha; zachraňuje poničené texty."
+        },
+        {
+          "name": "Oda",
+          "ancestry": "Půlčice",
+          "class": "zlodějka",
+          "level": 2,
+          "stats": {
+            "str": 9,
+            "dex": 15,
+            "con": 12,
+            "int": 11,
+            "wis": 14,
+            "cha": 12
+          },
+          "hp": 9,
+          "ac": 13,
+          "gear": "Prak, dýka a kožená zbroj; hlídá cestu zpět."
+        }
+      ],
+      "upgrades": [
+        "E11",
+        "E12",
+        "U11",
+        "I11"
+      ],
+      "history": [
+        {
+          "chapter": 1,
+          "day": 1,
+          "kind": "day",
+          "roll": 1,
+          "base": 1,
+          "profile": 0,
+          "gain": 1,
+          "headline": "Nákladný nezdar nebo ústup."
+        },
+        {
+          "chapter": 1,
+          "day": 2,
+          "kind": "day",
+          "roll": 6,
+          "base": 8,
+          "profile": 0,
+          "gain": 8,
+          "headline": "Průlomová epizoda nebo dramatický zvrat."
+        },
+        {
+          "chapter": 1,
+          "day": 3,
+          "kind": "day",
+          "roll": 3,
+          "base": 5,
+          "profile": 0,
+          "gain": 5,
+          "headline": "Úspěšná výprava nebo objev."
+        },
+        {
+          "chapter": 1,
+          "day": 4,
+          "kind": "day",
+          "roll": 6,
+          "base": 8,
+          "profile": 0,
+          "gain": 8,
+          "headline": "Průlomová epizoda nebo dramatický zvrat."
+        },
+        {
+          "chapter": 1,
+          "day": 5,
+          "kind": "day",
+          "roll": 6,
+          "base": 8,
+          "profile": 0,
+          "gain": 8,
+          "headline": "Průlomová epizoda nebo dramatický zvrat."
+        },
+        {
+          "chapter": 1,
+          "day": 6,
+          "kind": "day",
+          "roll": 2,
+          "base": 3,
+          "profile": 0,
+          "gain": 3,
+          "headline": "Běžný postup."
+        },
+        {
+          "chapter": 1,
+          "day": 7,
+          "kind": "day",
+          "roll": 3,
+          "base": 5,
+          "profile": 0,
+          "gain": 5,
+          "headline": "Úspěšná výprava nebo objev."
+        },
+        {
+          "chapter": 1,
+          "day": 8,
+          "kind": "day",
+          "roll": 4,
+          "base": 6,
+          "profile": 0,
+          "gain": 6,
+          "headline": "Výkon typický pro dané studio."
+        },
+        {
+          "chapter": 1,
+          "day": 9,
+          "kind": "day",
+          "roll": 5,
+          "base": 7,
+          "profile": 0,
+          "gain": 7,
+          "headline": "Velký úspěch nebo obrat v rivalitě."
+        },
+        {
+          "chapter": 1,
+          "day": 10,
+          "kind": "day",
+          "roll": 6,
+          "base": 8,
+          "profile": 0,
+          "gain": 8,
+          "headline": "Průlomová epizoda nebo dramatický zvrat."
+        },
+        {
+          "chapter": 1,
+          "day": null,
+          "kind": "interview",
+          "roll": 4,
+          "base": 6,
+          "profile": 0,
+          "gain": 6,
+          "headline": "Výkon typický pro dané studio."
+        }
+      ]
+    },
+    {
+      "id": "spolecnost-otevrenych-dveri",
+      "name": "Společnost otevřených dveří",
+      "face": "Jora Pantová",
+      "isPlayer": false,
+      "status": "active",
+      "profile": 0,
+      "cap": 10,
+      "authors": 5,
+      "startScore": 8,
+      "reputation": "všechno lze otevřít — ideálně klíčem, někdy rozhovorem",
+      "goal": "sdílet bezpečné cesty",
+      "weakness": "důvěřují i lidem, kterým nemají",
+      "relationship": "",
+      "episodes": "šestý den otevřeli průchod, který ostatní považovali za slepou zeď. Sedmý den je podvedl „majitel klíče“. Devátý den místo odplaty otevřeli únikovou cestu i jiné družině. Nabídnou hráčům výměnu mapy za mapu.",
+      "notes": "",
+      "members": [
+        {
+          "name": "Jora Pantová",
+          "ancestry": "Půlorkyně",
+          "class": "bojovnice",
+          "level": 3,
+          "stats": {
+            "str": 16,
+            "dex": 12,
+            "con": 14,
+            "int": 9,
+            "wis": 11,
+            "cha": 13
+          },
+          "hp": 22,
+          "ac": 15,
+          "gear": "Meč, kroužková zbroj a štít; vyjednává jasně a stručně."
+        },
+        {
+          "name": "Kvido Šperhák",
+          "ancestry": "Půlčík",
+          "class": "zloděj",
+          "level": 3,
+          "stats": {
+            "str": 8,
+            "dex": 16,
+            "con": 11,
+            "int": 14,
+            "wis": 12,
+            "cha": 13
+          },
+          "hp": 12,
+          "ac": 14,
+          "gear": "Paklíče, dýka a kožená zbroj; technický specialista."
+        },
+        {
+          "name": "Tesa",
+          "ancestry": "Člověk",
+          "class": "kněžka",
+          "level": 3,
+          "stats": {
+            "str": 11,
+            "dex": 12,
+            "con": 13,
+            "int": 10,
+            "wis": 15,
+            "cha": 14
+          },
+          "hp": 16,
+          "ac": 14,
+          "gear": "Palcát, kožená zbroj a štít; Gede a pohostinnost."
+        },
+        {
+          "name": "Varel Bez kliky",
+          "ancestry": "Elf",
+          "class": "čaroděj",
+          "level": 2,
+          "stats": {
+            "str": 8,
+            "dex": 13,
+            "con": 10,
+            "int": 16,
+            "wis": 12,
+            "cha": 11
+          },
+          "hp": 6,
+          "ac": 11,
+          "gear": "Hůl a kniha; průzkum značek na dveřích."
+        },
+        {
+          "name": "Puk",
+          "ancestry": "Goblin",
+          "class": "zloděj",
+          "level": 2,
+          "stats": {
+            "str": 9,
+            "dex": 15,
+            "con": 12,
+            "int": 11,
+            "wis": 13,
+            "cha": 10
+          },
+          "hp": 9,
+          "ac": 13,
+          "gear": "Prak, dýka a kožená zbroj; obsluha lana a kladek."
+        }
+      ],
+      "upgrades": [
+        "I11",
+        "I12",
+        "U11",
+        "U13"
+      ],
+      "history": [
+        {
+          "chapter": 1,
+          "day": 1,
+          "kind": "day",
+          "roll": 3,
+          "base": 5,
+          "profile": 0,
+          "gain": 5,
+          "headline": "Úspěšná výprava nebo objev."
+        },
+        {
+          "chapter": 1,
+          "day": 2,
+          "kind": "day",
+          "roll": 2,
+          "base": 3,
+          "profile": 0,
+          "gain": 3,
+          "headline": "Běžný postup."
+        },
+        {
+          "chapter": 1,
+          "day": 3,
+          "kind": "day",
+          "roll": 3,
+          "base": 5,
+          "profile": 0,
+          "gain": 5,
+          "headline": "Úspěšná výprava nebo objev."
+        },
+        {
+          "chapter": 1,
+          "day": 4,
+          "kind": "day",
+          "roll": 4,
+          "base": 6,
+          "profile": 0,
+          "gain": 6,
+          "headline": "Výkon typický pro dané studio."
+        },
+        {
+          "chapter": 1,
+          "day": 5,
+          "kind": "day",
+          "roll": 5,
+          "base": 7,
+          "profile": 0,
+          "gain": 7,
+          "headline": "Velký úspěch nebo obrat v rivalitě."
+        },
+        {
+          "chapter": 1,
+          "day": 6,
+          "kind": "day",
+          "roll": 6,
+          "base": 8,
+          "profile": 0,
+          "gain": 8,
+          "headline": "Průlomová epizoda nebo dramatický zvrat."
+        },
+        {
+          "chapter": 1,
+          "day": 7,
+          "kind": "day",
+          "roll": 1,
+          "base": 1,
+          "profile": 0,
+          "gain": 1,
+          "headline": "Nákladný nezdar nebo ústup."
+        },
+        {
+          "chapter": 1,
+          "day": 8,
+          "kind": "day",
+          "roll": 3,
+          "base": 5,
+          "profile": 0,
+          "gain": 5,
+          "headline": "Úspěšná výprava nebo objev."
+        },
+        {
+          "chapter": 1,
+          "day": 9,
+          "kind": "day",
+          "roll": 6,
+          "base": 8,
+          "profile": 0,
+          "gain": 8,
+          "headline": "Průlomová epizoda nebo dramatický zvrat."
+        },
+        {
+          "chapter": 1,
+          "day": 10,
+          "kind": "day",
+          "roll": 4,
+          "base": 6,
+          "profile": 0,
+          "gain": 6,
+          "headline": "Výkon typický pro dané studio."
+        },
+        {
+          "chapter": 1,
+          "day": null,
+          "kind": "interview",
+          "roll": 5,
+          "base": 7,
+          "profile": 0,
+          "gain": 7,
+          "headline": "Velký úspěch nebo obrat v rivalitě."
+        }
+      ]
+    },
+    {
+      "id": "sul-a-saze",
+      "name": "Sůl a saze",
+      "face": "Kapitánka Bára Solná",
+      "isPlayer": false,
+      "status": "active",
+      "profile": 0,
+      "cap": 10,
+      "authors": 5,
+      "startScore": 10,
+      "reputation": "pobřežní dobrodruzi; po každém úspěchu páchne hostinec rybou a kouřem",
+      "goal": "nalézt nový přístav",
+      "weakness": "umějí se vyčerpat hýřením před důležitým odchodem",
+      "relationship": "",
+      "episodes": "pátý den zachránili náklad z hořícího skladu, pomocí mokrých plachet a řetězu věder. Vysoké hody neznamenají automatickou odměnu za škodu: oceňovaný výkon je záchrana. Chtějí navázat kontakt s Muriho hostincem; znají jej z doslechu, existující přátelství Muriho a Murloca jim nedává nárok na služby.",
+      "notes": "",
+      "members": [
+        {
+          "name": "Kapitánka Bára Solná",
+          "ancestry": "Člověk",
+          "class": "bojovnice",
+          "level": 3,
+          "stats": {
+            "str": 15,
+            "dex": 13,
+            "con": 13,
+            "int": 10,
+            "wis": 12,
+            "cha": 14
+          },
+          "hp": 20,
+          "ac": 15,
+          "gear": "Meč, kroužková zbroj a štít; vede posádku."
+        },
+        {
+          "name": "Uhlík",
+          "ancestry": "Goblin",
+          "class": "čaroděj",
+          "level": 3,
+          "stats": {
+            "str": 8,
+            "dex": 14,
+            "con": 11,
+            "int": 15,
+            "wis": 12,
+            "cha": 11
+          },
+          "hp": 10,
+          "ac": 12,
+          "gear": "Hůl a očouzená kniha; nebezpečně nadšený experimentátor."
+        },
+        {
+          "name": "Vela Za odlivu",
+          "ancestry": "Elfka",
+          "class": "zlodějka",
+          "level": 3,
+          "stats": {
+            "str": 9,
+            "dex": 16,
+            "con": 11,
+            "int": 12,
+            "wis": 14,
+            "cha": 10
+          },
+          "hp": 12,
+          "ac": 14,
+          "gear": "Krátký luk, dýka a kožená zbroj; průzkum mělčin."
+        },
+        {
+          "name": "Tor Dvě kotvy",
+          "ancestry": "Trpaslík",
+          "class": "bojovník",
+          "level": 3,
+          "stats": {
+            "str": 16,
+            "dex": 9,
+            "con": 15,
+            "int": 10,
+            "wis": 11,
+            "cha": 10
+          },
+          "hp": 22,
+          "ac": 13,
+          "gear": "Kladivo a kroužková zbroj; staví provizorní můstky."
+        },
+        {
+          "name": "Sestra Mína",
+          "ancestry": "Člověk",
+          "class": "kněžka",
+          "level": 2,
+          "stats": {
+            "str": 10,
+            "dex": 11,
+            "con": 12,
+            "int": 12,
+            "wis": 15,
+            "cha": 13
+          },
+          "hp": 10,
+          "ac": 13,
+          "gear": "Palcát, kožená zbroj a štít; Ordova ochránkyně cest."
+        }
+      ],
+      "upgrades": [
+        "U11",
+        "U12",
+        "U13"
+      ],
+      "history": [
+        {
+          "chapter": 1,
+          "day": 1,
+          "kind": "day",
+          "roll": 3,
+          "base": 5,
+          "profile": 0,
+          "gain": 5,
+          "headline": "Úspěšná výprava nebo objev."
+        },
+        {
+          "chapter": 1,
+          "day": 2,
+          "kind": "day",
+          "roll": 5,
+          "base": 7,
+          "profile": 0,
+          "gain": 7,
+          "headline": "Velký úspěch nebo obrat v rivalitě."
+        },
+        {
+          "chapter": 1,
+          "day": 3,
+          "kind": "day",
+          "roll": 3,
+          "base": 5,
+          "profile": 0,
+          "gain": 5,
+          "headline": "Úspěšná výprava nebo objev."
+        },
+        {
+          "chapter": 1,
+          "day": 4,
+          "kind": "day",
+          "roll": 2,
+          "base": 3,
+          "profile": 0,
+          "gain": 3,
+          "headline": "Běžný postup."
+        },
+        {
+          "chapter": 1,
+          "day": 5,
+          "kind": "day",
+          "roll": 6,
+          "base": 8,
+          "profile": 0,
+          "gain": 8,
+          "headline": "Průlomová epizoda nebo dramatický zvrat."
+        },
+        {
+          "chapter": 1,
+          "day": 6,
+          "kind": "day",
+          "roll": 4,
+          "base": 6,
+          "profile": 0,
+          "gain": 6,
+          "headline": "Výkon typický pro dané studio."
+        },
+        {
+          "chapter": 1,
+          "day": 7,
+          "kind": "day",
+          "roll": 2,
+          "base": 3,
+          "profile": 0,
+          "gain": 3,
+          "headline": "Běžný postup."
+        },
+        {
+          "chapter": 1,
+          "day": 8,
+          "kind": "day",
+          "roll": 5,
+          "base": 7,
+          "profile": 0,
+          "gain": 7,
+          "headline": "Velký úspěch nebo obrat v rivalitě."
+        },
+        {
+          "chapter": 1,
+          "day": 9,
+          "kind": "day",
+          "roll": 3,
+          "base": 5,
+          "profile": 0,
+          "gain": 5,
+          "headline": "Úspěšná výprava nebo objev."
+        },
+        {
+          "chapter": 1,
+          "day": 10,
+          "kind": "day",
+          "roll": 3,
+          "base": 5,
+          "profile": 0,
+          "gain": 5,
+          "headline": "Úspěšná výprava nebo objev."
+        },
+        {
+          "chapter": 1,
+          "day": null,
+          "kind": "interview",
+          "roll": 3,
+          "base": 5,
+          "profile": 0,
+          "gain": 5,
+          "headline": "Úspěšná výprava nebo objev."
+        }
+      ]
+    },
+    {
+      "id": "hracska-redakce",
+      "name": "Redakce",
+      "face": "Pět protagonistů, tři dny náskoku",
+      "isPlayer": true,
+      "status": "active",
+      "profile": 0,
+      "cap": 10,
+      "authors": 5,
+      "startScore": 50,
+      "reputation": "",
+      "goal": "",
+      "weakness": "",
+      "relationship": "",
+      "episodes": "",
+      "notes": "Podle [[Shadowdark]]: **Glatnig** — goblin, kněz Orda; **Mubgnat** — goblin, bojovník; **Murlok/Murloc** — půlork, zloděj; **Thrur** — trpaslík, kněz Gede; **Melg** — člověk, čaroděj. Pracovní úroveň 3 podle zadání PJ; ověřte proti aktuálním deníkům, zvlášť pokud se sestava od zápisu změnila.\nHP, OČ, vlastnosti a výbavu hráčů převezměte z jejich skutečných deníků. Nejsou zde vymyšlené ani změněné. Vztah Muri–Murloc je přátelský; Vrba–Mubgnat a Serenia–Melg nepřátelský. Novinový komentář uvádí předčasný sestup a zachovává napětí, nikoli domyšlené soubojové úspěchy.",
+      "members": [],
+      "upgrades": [],
+      "history": [],
+      "calendar": {
+        "chapter": 2,
+        "day": 0
+      },
+      "authorRecords": {},
+      "purchased": [],
+      "spAdjustment": 0
+    },
+    {
+      "id": "druzina-robina-uda",
+      "name": "Družina Robina Úda",
+      "face": "Robin Úd; za jeho zády Vrba",
+      "isPlayer": false,
+      "status": "active",
+      "profile": -1,
+      "cap": 10,
+      "authors": 5,
+      "startScore": 0,
+      "reputation": "samozvaní lidoví hrdinové s podivně přesným ceníkem drobných laskavostí",
+      "goal": "konečně vyhrát bez následné reklamace",
+      "weakness": "podezíravost a vnitřní spory o zásoby",
+      "relationship": "Vrba chce od Mubgnata omluvu a jistotu, že mu nikdo znovu nesáhne na svitky. Má jich více podle existujícího zápisu; jejich přesný počet není určen a počet se nepoužívá jako náhodný zdroj moci. Svitek zdarma nevydá. Robin by naopak rád prodal společnou „usmiřovací“ reportáž.",
+      "episodes": "první den ztratili zásoby při nepovedené zkratce. Třetí a pátý den skutečně pomohli dvěma skupinám civilistů projít nebezpečným úsekem. Sedmý den se nepovedla dražba svitků; nikdo kvůli tomu nevydává úroveň za bodový postih. Rozhovor zachránila Malá Jana, když předvedla praktické použití lana a umlčela Robina pohledem.",
+      "notes": "",
+      "members": [
+        {
+          "name": "Robin Úd",
+          "ancestry": "Člověk",
+          "class": "zloděj",
+          "level": 3,
+          "stats": {
+            "str": 11,
+            "dex": 16,
+            "con": 12,
+            "int": 10,
+            "wis": 12,
+            "cha": 15
+          },
+          "hp": 13,
+          "ac": 14,
+          "gear": "Krátký luk, dýka a kožená zbroj; kapitán a vypravěč vlastní legendy."
+        },
+        {
+          "name": "Vrba",
+          "ancestry": "Půlčík",
+          "class": "čaroděj",
+          "level": 2,
+          "stats": {
+            "str": 8,
+            "dex": 14,
+            "con": 10,
+            "int": 16,
+            "wis": 12,
+            "cha": 11
+          },
+          "hp": 6,
+          "ac": 12,
+          "gear": "Hůl, kniha a svitky Burning Hands; hlídá brašnu a pamatuje si Mubgnata."
+        },
+        {
+          "name": "Malá Jana",
+          "ancestry": "Půlorkyně",
+          "class": "bojovnice",
+          "level": 2,
+          "stats": {
+            "str": 16,
+            "dex": 10,
+            "con": 14,
+            "int": 9,
+            "wis": 12,
+            "cha": 11
+          },
+          "hp": 15,
+          "ac": 15,
+          "gear": "Kopí, kroužková zbroj a štít; jediná spolehlivá brzda kapitánových plánů."
+        },
+        {
+          "name": "Bratr Špunt",
+          "ancestry": "Trpaslík",
+          "class": "kněz",
+          "level": 2,
+          "stats": {
+            "str": 12,
+            "dex": 9,
+            "con": 14,
+            "int": 11,
+            "wis": 15,
+            "cha": 12
+          },
+          "hp": 12,
+          "ac": 15,
+          "gear": "Palcát, kroužková zbroj a štít; Gede a důsledné účetnictví po hostině."
+        },
+        {
+          "name": "Lísková",
+          "ancestry": "Elfka",
+          "class": "zlodějka",
+          "level": 2,
+          "stats": {
+            "str": 9,
+            "dex": 15,
+            "con": 11,
+            "int": 13,
+            "wis": 12,
+            "cha": 14
+          },
+          "hp": 8,
+          "ac": 13,
+          "gear": "Krátký luk, dýka a kožená zbroj; domlouvá výkupné a průchody."
+        }
+      ],
+      "upgrades": [
+        "U11",
+        "I12"
+      ],
+      "history": [
+        {
+          "chapter": 1,
+          "day": 1,
+          "kind": "day",
+          "roll": 1,
+          "base": 1,
+          "profile": -1,
+          "gain": 0,
+          "headline": "Nákladný nezdar nebo ústup."
+        },
+        {
+          "chapter": 1,
+          "day": 2,
+          "kind": "day",
+          "roll": 3,
+          "base": 5,
+          "profile": -1,
+          "gain": 4,
+          "headline": "Úspěšná výprava nebo objev."
+        },
+        {
+          "chapter": 1,
+          "day": 3,
+          "kind": "day",
+          "roll": 6,
+          "base": 8,
+          "profile": -1,
+          "gain": 7,
+          "headline": "Průlomová epizoda nebo dramatický zvrat."
+        },
+        {
+          "chapter": 1,
+          "day": 4,
+          "kind": "day",
+          "roll": 5,
+          "base": 7,
+          "profile": -1,
+          "gain": 6,
+          "headline": "Velký úspěch nebo obrat v rivalitě."
+        },
+        {
+          "chapter": 1,
+          "day": 5,
+          "kind": "day",
+          "roll": 6,
+          "base": 8,
+          "profile": -1,
+          "gain": 7,
+          "headline": "Průlomová epizoda nebo dramatický zvrat."
+        },
+        {
+          "chapter": 1,
+          "day": 6,
+          "kind": "day",
+          "roll": 3,
+          "base": 5,
+          "profile": -1,
+          "gain": 4,
+          "headline": "Úspěšná výprava nebo objev."
+        },
+        {
+          "chapter": 1,
+          "day": 7,
+          "kind": "day",
+          "roll": 1,
+          "base": 1,
+          "profile": -1,
+          "gain": 0,
+          "headline": "Nákladný nezdar nebo ústup."
+        },
+        {
+          "chapter": 1,
+          "day": 8,
+          "kind": "day",
+          "roll": 5,
+          "base": 7,
+          "profile": -1,
+          "gain": 6,
+          "headline": "Velký úspěch nebo obrat v rivalitě."
+        },
+        {
+          "chapter": 1,
+          "day": 9,
+          "kind": "day",
+          "roll": 3,
+          "base": 5,
+          "profile": -1,
+          "gain": 4,
+          "headline": "Úspěšná výprava nebo objev."
+        },
+        {
+          "chapter": 1,
+          "day": 10,
+          "kind": "day",
+          "roll": 2,
+          "base": 3,
+          "profile": -1,
+          "gain": 2,
+          "headline": "Běžný postup."
+        },
+        {
+          "chapter": 1,
+          "day": null,
+          "kind": "interview",
+          "roll": 4,
+          "base": 6,
+          "profile": 0,
+          "gain": 6,
+          "headline": "Výkon typický pro dané studio."
+        }
+      ]
+    }
+  ],
+  "lastRanks": {},
+  "lastEvaluation": null
+}

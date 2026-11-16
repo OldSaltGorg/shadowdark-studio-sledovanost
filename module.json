@@ -1,10 +1,13 @@
 {
   "id": "shadowdark-studio-sledovanost",
   "title": "Sledovanost — Ghostwriters' Studio",
-  "description": "Studio upgrade tree for the Sledovanost (Popularity) campaign meta-progression in Shadowdark: tiered upgrades with dependencies, SP tracking, Czech/English content and a GM editor.",
-  "version": "0.1.0",
+  "description": "Sledovanost (Popularity) meta-progression for a Shadowdark campaign: round-robin daily author awards, a WoW-style studio upgrade tree, and a rival-studio leaderboard with GM simulation. Czech/English.",
+  "version": "0.2.0",
   "authors": [
-    { "name": "OldSaltGorg", "url": "https://github.com/OldSaltGorg" }
+    {
+      "name": "OldSaltGorg",
+      "url": "https://github.com/OldSaltGorg"
+    }
   ],
   "compatibility": {
     "minimum": "13",
@@ -15,15 +18,30 @@
       {
         "id": "shadowdark",
         "type": "system",
-        "compatibility": { "minimum": "4.0.0", "verified": "4.0.6" }
+        "compatibility": {
+          "minimum": "4.0.0",
+          "verified": "4.0.6"
+        }
       }
     ]
   },
-  "esmodules": ["scripts/main.mjs"],
-  "styles": ["styles/studio.css"],
+  "esmodules": [
+    "scripts/main.mjs"
+  ],
+  "styles": [
+    "styles/studio.css"
+  ],
   "languages": [
-    { "lang": "en", "name": "English", "path": "lang/en.json" },
-    { "lang": "cs", "name": "Čeština", "path": "lang/cs.json" }
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "cs",
+      "name": "Čeština",
+      "path": "lang/cs.json"
+    }
   ],
   "url": "https://github.com/OldSaltGorg/shadowdark-studio-sledovanost",
   "manifest": "https://github.com/OldSaltGorg/shadowdark-studio-sledovanost/releases/latest/download/module.json",

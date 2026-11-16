@@ -6,7 +6,10 @@ export const LANGUAGES = ["cs", "en"];
 export const SETTINGS = {
   TREE: "tree",
   STATE: "state",
-  LANGUAGE: "language"
+  LANGUAGE: "language",
+  ACTIVE_GROUP: "activeGroup",
+  SESSION: "session",
+  RIVALS: "rivals"
 };
 
 export const DEFAULT_STATE = Object.freeze({

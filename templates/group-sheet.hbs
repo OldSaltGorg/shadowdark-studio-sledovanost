@@ -1,0 +1,112 @@
+<div class="sds-group">
+  {{#if missing}}
+  <p class="sds-warning">Group not found.</p>
+  {{else}}
+  <div class="sds-group-body">
+    <div class="sds-group-top">
+      <div class="sds-group-score">
+        <span class="value">{{score}}</span>
+        <span class="hint">{{L.Board.Score}}{{#if g.isPlayer}} · {{L.Board.LinkedToStudio}}{{/if}}</span>
+        <span class="hint">SP {{sp.earned}} / {{L.Board.Spent}} {{sp.spent}} / {{L.Board.Available}} {{sp.available}}</span>
+      </div>
+      <div class="sds-group-grid">
+        <div class="form-group"><label>{{L.Board.Name}}</label><input type="text" name="name" value="{{g.name}}" required></div>
+        <div class="form-group"><label>{{L.Board.Face}}</label><input type="text" name="face" value="{{g.face}}"></div>
+        <div class="form-group"><label>{{L.Board.StatusLabel}}</label>
+          <select name="status">{{#each statuses}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></div>
+        <div class="form-group"><label>{{L.Board.ProfileLabel}}</label>
+          <select name="profile">{{#each profiles}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></div>
+        <div class="form-group"><label>{{L.Board.StartScore}}</label><input type="number" name="startScore" value="{{g.startScore}}"></div>
+        <div class="form-group"><label>{{L.Board.Cap}}</label><input type="number" name="cap" min="0" value="{{g.cap}}"></div>
+        <div class="form-group"><label>{{L.Board.Authors}}</label><input type="number" name="authors" min="1" value="{{g.authors}}"></div>
+        <div class="form-group"><label>{{L.Board.IsPlayer}}</label><input type="checkbox" name="isPlayer" {{#if g.isPlayer}}checked{{/if}}></div>
+      </div>
+    </div>
+
+    <fieldset>
+      <legend>{{L.Board.Lore}}</legend>
+      <div class="form-group"><label>{{L.Board.Reputation}}</label><input type="text" name="reputation" value="{{g.reputation}}"></div>
+      <div class="form-group"><label>{{L.Board.Goal}}</label><input type="text" name="goal" value="{{g.goal}}"></div>
+      <div class="form-group"><label>{{L.Board.Weakness}}</label><input type="text" name="weakness" value="{{g.weakness}}"></div>
+      <div class="form-group stacked"><label>{{L.Board.Relationship}}</label><textarea name="relationship" rows="2">{{g.relationship}}</textarea></div>
+      <div class="form-group stacked"><label>{{L.Board.Episodes}}</label><textarea name="episodes" rows="3">{{g.episodes}}</textarea></div>
+      <div class="form-group stacked"><label>{{L.Board.Notes}}</label><textarea name="notes" rows="2">{{g.notes}}</textarea></div>
+    </fieldset>
+
+    <fieldset>
+      <legend>{{L.Board.Members}}</legend>
+      <table class="sds-members">
+        <thead>
+          <tr>
+            <th>{{L.Board.Name}}</th><th>{{L.Board.Ancestry}}</th><th>{{L.Board.Class}}</th><th>Lvl</th>
+            {{#each statKeys}}<th>{{label}}</th>{{/each}}
+            <th>HP</th><th>AC</th><th>{{L.Board.Gear}}</th><th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each members}}
+          <tr>
+            <td><input type="text" name="members.{{index}}.name" value="{{name}}"></td>
+            <td><input type="text" name="members.{{index}}.ancestry" value="{{ancestry}}"></td>
+            <td><input type="text" name="members.{{index}}.class" value="{{class}}"></td>
+            <td><input type="number" class="num" name="members.{{index}}.level" value="{{level}}"></td>
+            {{#each statList}}<td><input type="number" class="num" name="members.{{../index}}.stats.{{key}}" value="{{value}}"></td>{{/each}}
+            <td><input type="number" class="num" name="members.{{index}}.hp" value="{{hp}}"></td>
+            <td><input type="number" class="num" name="members.{{index}}.ac" value="{{ac}}"></td>
+            <td><input type="text" name="members.{{index}}.gear" value="{{gear}}"></td>
+            <td><a data-action="removeMember" data-index="{{index}}" data-tooltip="{{@root.L.Board.Delete}}"><i class="fa-solid fa-trash"></i></a></td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+      <button type="button" data-action="addMember"><i class="fa-solid fa-user-plus"></i> {{L.Board.AddMember}}</button>
+    </fieldset>
+
+    {{#if playerUpgrades}}
+    <fieldset>
+      <legend>{{L.Board.Upgrades}}</legend>
+      <p class="hint">{{L.Board.PlayerUpgradesHint}}</p>
+      {{#each playerUpgrades}}<span class="sds-chip">{{id}} {{name}} ({{cost}} SP)</span>{{else}}<p class="hint">—</p>{{/each}}
+    </fieldset>
+    {{else}}
+    <fieldset class="sds-group-upgrades">
+      <legend>{{L.Board.Upgrades}}</legend>
+      {{#each branches}}
+      <div class="sds-prereq-group" style="--branch-color: {{color}};">
+        <h4>{{name}}</h4>
+        {{#each talents}}
+        <label class="checkbox"><input type="checkbox" name="upgrades.{{id}}" {{#if checked}}checked{{/if}}> <span class="id">{{id}}</span> {{name}}</label>
+        {{/each}}
+      </div>
+      {{/each}}
+    </fieldset>
+    {{/if}}
+
+    <fieldset>
+      <legend>{{L.Board.History}}</legend>
+      {{#if g.isPlayer}}<p class="hint">{{L.Board.PlayerHistoryHint}}</p>{{/if}}
+      <table class="sds-history">
+        <thead><tr><th>{{L.Board.Date}}</th><th>{{L.Board.Roll}}</th><th>{{L.Board.Gain}}</th><th>{{L.Board.Headline}}</th><th></th></tr></thead>
+        <tbody>
+          {{#each history}}
+          <tr class="kind-{{kind}}">
+            <td>{{label}}</td>
+            <td>{{rollText}}</td>
+            <td><input type="number" class="num" name="history.{{index}}.gain" value="{{gain}}"></td>
+            <td><input type="text" name="history.{{index}}.headline" value="{{headline}}"></td>
+            <td><a data-action="removeHistory" data-index="{{index}}" data-tooltip="{{@root.L.Board.Delete}}"><i class="fa-solid fa-trash"></i></a></td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+      <button type="button" data-action="addHistory"><i class="fa-solid fa-plus"></i> {{L.Board.AddHistory}}</button>
+    </fieldset>
+  </div>
+
+  <footer class="form-footer">
+    <button type="submit"><i class="fa-solid fa-floppy-disk"></i> {{L.Board.Save}}</button>
+    <button type="button" data-action="cancel"><i class="fa-solid fa-xmark"></i> {{L.Board.Cancel}}</button>
+    <button type="button" class="danger" data-action="deleteGroup"><i class="fa-solid fa-trash"></i> {{L.Board.DeleteGroup}}</button>
+  </footer>
+  {{/if}}
+</div>

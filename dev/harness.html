@@ -4,7 +4,11 @@
   <meta charset="utf-8">
   <title>Studio tree harness</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="/styles/studio.css">
+  <script>
+    // Fresh URL prefix per load so the browser never reuses stale module code.
+    globalThis.HARNESS_PREFIX = `/v${Date.now()}`;
+    document.write(`<link rel="stylesheet" href="${HARNESS_PREFIX}/styles/studio.css">`);
+  </script>
   <style>
     body { margin: 0; background: #444; font-family: "Signika", sans-serif; color: #ddd; }
     #windows { position: relative; padding: 10px; display: flex; flex-direction: column; gap: 10px; }
@@ -18,10 +22,13 @@
     .form-group { display: flex; gap: 8px; margin: 4px 0; align-items: center; }
     .form-group label { flex: 0 0 140px; }
     .form-group.stacked { flex-direction: column; align-items: stretch; }
+    .form-group.stacked label { flex: none; }
+    .form-group input[type=text], .form-group select, .form-group textarea { flex: 1; }
+    fieldset { border: 1px solid #444; margin: 8px 0; }
     dialog { background: #2a2a2a; color: #ddd; min-width: 420px; }
   </style>
   <script src="/dev/vendor/handlebars.min.js"></script>
-  <script src="/dev/foundry-stub.js"></script>
+  <script>document.write(`<script src="${HARNESS_PREFIX}/dev/foundry-stub.js"><\/script>`);</script>
 </head>
 <body>
   <div class="harness-bar">
@@ -30,7 +37,7 @@
   </div>
   <div id="windows"></div>
   <script type="module">
-    await import("/scripts/main.mjs");
+    await import(`${HARNESS_PREFIX}/scripts/main.mjs`);
     await Hooks.callAll("init");
     await Hooks.callAll("ready");
     await game.modules.get("shadowdark-studio-sledovanost").api.open();

@@ -1,0 +1,73 @@
+{{#if (eq activeTab "board")}}
+<section class="sds-tab sds-tab-board" data-tab="board">
+  <div class="sds-lb-scroll">
+    <div class="sds-lb-head">
+      {{#if isGM}}
+      <input type="text" class="sds-lb-title" value="{{lb.title}}" data-board-title>
+      <div class="sds-lb-tools">
+        <button type="button" data-action="lbAdd"><i class="fa-solid fa-plus"></i> {{L.Board.AddGroup}}</button>
+        {{#if lb.selectedCount}}<span class="sds-lb-selinfo">{{lb.selectedCount}} {{L.Board.Selected}} · <a data-action="lbSelectNone">{{L.Board.ClearSelection}}</a></span>{{/if}}
+        <button type="button" class="primary" data-action="lbEvaluate"><i class="fa-solid fa-dice-six"></i> {{#if lb.selectedCount}}{{L.Board.EvaluateSelected}}{{else}}{{L.Board.Evaluate}}{{/if}}</button>
+        <button type="button" data-action="lbExport"><i class="fa-solid fa-file-export"></i> {{L.Board.Export}}</button>
+        <button type="button" data-action="lbImport"><i class="fa-solid fa-file-import"></i> {{L.Board.Import}}</button>
+        <button type="button" class="danger" data-action="lbReset"><i class="fa-solid fa-rotate-left"></i> {{L.Board.Reset}}</button>
+      </div>
+      {{else}}
+      <h2 class="sds-lb-title">{{lb.title}}</h2>
+      {{/if}}
+    </div>
+
+    <table class="sds-lb">
+      <thead>
+        <tr>{{#if isGM}}<th class="sel"><a data-action="lbSelectAll" data-tooltip="{{L.Board.SelectAll}}"><i class="fa-regular fa-square-check"></i></a></th>{{/if}}<th class="rank">{{L.Board.Rank}}</th><th>{{L.Board.Studio}}</th><th class="score">{{L.Board.Score}}</th><th class="gain">{{L.Board.LastGain}}</th><th>{{L.Board.Face}}</th>{{#if isGM}}<th></th>{{/if}}</tr>
+      </thead>
+      <tbody>
+        {{#each lb.rows}}
+        {{#if dividerBefore}}
+        <tr class="sds-lb-divider"><td colspan="7"><span>{{@root.L.Board.BelowLine}}</span></td></tr>
+        {{/if}}
+        {{#if cancelledDivider}}
+        <tr class="sds-lb-divider"><td colspan="7"><span>{{@root.L.Board.Cancelled}}</span></td></tr>
+        {{/if}}
+        <tr class="sds-lb-row {{#if isPlayer}}player{{/if}} {{#if cancelled}}cancelled{{/if}} {{#if selected}}selected{{/if}}" data-group-id="{{id}}"
+          {{#if headline}}data-tooltip="{{lastLabel}}: {{headline}}"{{/if}}>
+          {{#if @root.isGM}}<td class="sel">{{#if selectable}}<input type="checkbox" data-lb-select="{{id}}" {{#if selected}}checked{{/if}}>{{/if}}</td>{{/if}}
+          <td class="rank">
+            {{#if rank}}{{rank}}{{else}}—{{/if}}
+            {{#if moveUp}}<span class="move up"><i class="fa-solid fa-caret-up"></i>{{moveUp}}</span>{{/if}}
+            {{#if moveDown}}<span class="move down"><i class="fa-solid fa-caret-down"></i>{{moveDown}}</span>{{/if}}
+          </td>
+          <td class="name">{{name}}{{#if isPlayer}} <i class="fa-solid fa-feather-pointed player-tag"></i>{{/if}}</td>
+          <td class="score">{{score}}</td>
+          <td class="gain">{{gainText}}</td>
+          <td class="face">{{face}}</td>
+          {{#if @root.isGM}}<td class="edit"><a data-action="lbEdit" data-tooltip="{{@root.L.Board.Edit}}"><i class="fa-solid fa-pen"></i></a></td>{{/if}}
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    {{#if isGM}}<p class="hint">{{L.Board.GMHint}}</p>{{/if}}
+
+    {{#if lb.evaluation}}
+    <div class="sds-lb-eval">
+      <h3><i class="fa-solid fa-dice-six"></i> {{L.Board.LastEvaluation}}: {{lb.evaluation.label}} <span class="hint">({{lb.evaluation.when}})</span></h3>
+      <table>
+        <thead><tr><th>{{L.Board.Studio}}</th><th>{{L.Board.Date}}</th><th>{{L.Board.Roll}}</th><th>{{L.Board.Gain}}</th><th>{{L.Board.Headline}}</th></tr></thead>
+        <tbody>
+          {{#each lb.evaluation.results}}
+          <tr class="{{#if skipped}}skipped{{/if}}">
+            <td>{{name}}</td>
+            <td>{{dateLabel}}</td>
+            {{#if skipped}}<td colspan="3" class="hint">{{@root.L.Board.Skipped}}</td>
+            {{else}}<td>d6 {{roll}} → {{base}}{{#if profile}} {{profile}}{{/if}}</td><td>+{{gain}}</td><td>{{headline}}</td>{{/if}}
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+    {{/if}}
+  </div>
+</section>
+{{else}}
+<section class="sds-tab" data-tab="board" hidden></section>
+{{/if}}
